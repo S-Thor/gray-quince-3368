@@ -1,0 +1,29 @@
+.mainSliderDiv {
+    width: 70%;
+    border: 1px solid black;
+    height: 50vh;
+    margin: auto;
+    display: flex;
+}
+
+.leftDiv {
+    width: 68%;
+    border: 1px solid red;
+}
+
+.leftDiv > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.rightDiv {
+    width: 32%;
+    border: 1px solid teal;
+}
+
+.rightDiv > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
