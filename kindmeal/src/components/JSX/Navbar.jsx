@@ -8,31 +8,31 @@ const links = [
     title: "Home",
   },
   {
-    to: "/",
+    to: "/recipies",
     title: "Recipes",
   },
   {
-    to: "/",
+    to: "/deals",
     title: "Meal Deals",
   },
   {
-    to: "/",
+    to: "/moments",
     title: "KindMoments",
   },
   {
-    to: "/",
+    to: "/hotpicks",
     title: "Hot Picks",
   },
   {
-    to: "/",
+    to: "/directory",
     title: "Directory",
   },
   {
-    to: "/",
+    to: "/articles",
     title: "Articles",
   },
   {
-    to: "/",
+    to: "/aboutus",
     title: "About Us",
   },
 ];

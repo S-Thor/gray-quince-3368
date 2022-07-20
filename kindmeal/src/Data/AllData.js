@@ -165,4 +165,28 @@ export const middleBoxData = [
         title: "Meet Food Lovers",
         desc: "Make new, compassionate friends and share great food tips"
     }
+];
+
+export const footerData = [
+    {
+        title: "General",
+        listItem: ['Home','Sign Up','Businesses / Restaurateurs','Advertising','About KindMeal.my','Help & FAQ','Terms & Conditions','Inspiring Partners','Lifestyle Ambassadors','Jobs & Careers','Contact Us']
+    },
+    {
+        title: "Features",
+        listItem: ['Meat-Free Deals','Tasty Menus','Kind Moments','Meat-Free Recipes','Member Recommendatons','Featured Restaurants','Vegetarian & Vegan Directory','Food Map','Become A Superhero','Vegab News & Vegetarian Articles','Latest Comments']
+
+    },
+    {
+        title: "Social Media",
+        listItem: ['KindMeal Widget','Facebook','Twitter','Instagram','iPhone & iPod App','Android App']
+    },
+    {
+        title: "Exciting Promos",
+        listItem: ['Gadhimai: Ending Mass Slaughter','Free Meals','Food Bloggers','Uber CHIRP','Jane Goodall Contest','Win Digi iPhone 6','Feed The Poor','Win Superhero Gifts','Win an iPad Mini 3']
+    },
+    {
+        title: "PetFinder.my",
+        listItem: ['Adopt A Pet','Smartphone Apps','WAGazine','Discussion Forum','Medical Fund']
+    }
 ]

@@ -1,0 +1,53 @@
+.footerMain {
+    width: 100%;
+    height: auto;
+    background-color: #2BB673;
+    box-sizing: border-box;
+    padding: 1rem 0;
+}
+
+.listItems {
+    width: 60%;
+    height: auto;
+    /* border: 1px solid black; */
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.titleDiv {
+    text-align: left;
+    /* border: 1px solid red; */
+    padding: 0;
+    margin: 0;
+}
+
+.listTitle {
+    font-size: 0.8rem;
+    color: white;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.listItem {
+    font-size: 0.7rem;
+    color: white;
+    text-decoration: none;
+    list-style: none;
+
+}
+
+.listItem > li {
+    margin: 3px 0;
+}
+
+.copyrightDiv {
+    color: white;
+    width: 60%;
+    margin: 5px auto 0;
+}
+
+.copyrightDiv > p {
+    font-size: 0.6rem;
+    margin: 0;
+}

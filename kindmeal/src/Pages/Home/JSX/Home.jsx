@@ -6,6 +6,7 @@ import MainSlider from './MainSlider';
 import Save from './Save';
 import { FlexBoxData } from '../../../Data/AllData';
 import MiddleSection from './MiddleSection';
+import Footer from '../../../components/JSX/Footer';
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
         <FlexBox/>
         <MiddleSection/>
         <Save/>
+        <Footer/>
     </div>
   )
 }

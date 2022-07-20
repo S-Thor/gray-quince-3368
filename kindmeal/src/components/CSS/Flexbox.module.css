@@ -3,7 +3,7 @@
     height: auto;
     box-sizing: border-box;
     padding: 1rem 0;
-    background-color: rgb(225, 219, 219);
+    background-image: linear-gradient(to bottom,white 80%,#E1E1E1 100%);
 }
 
 
