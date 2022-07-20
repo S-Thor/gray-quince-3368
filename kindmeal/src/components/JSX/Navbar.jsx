@@ -55,6 +55,7 @@ const Navbar = () => {
       {links.map((link) => (
         
           <NavLink
+            key={link.title}
             to={link.to}
             className={({ isActive }) =>
               isActive ? styles.activeNav : styles.baseNav

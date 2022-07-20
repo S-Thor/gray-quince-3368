@@ -22,6 +22,8 @@ import super4 from "../Images/Superheroes/super4.jpg";
 import super5 from "../Images/Superheroes/super5.jpg";
 
 
+export const dog = latest1;
+
 export const mainSectionData = [
     {
         shopURL: salAte,
