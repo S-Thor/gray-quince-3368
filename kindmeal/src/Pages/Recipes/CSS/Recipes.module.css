@@ -1,0 +1,69 @@
+.mainSearchDiv {
+    width: 100%;
+    height: 12rem;
+    background-color: #F0F0F0;
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+.mainDetailsDiv {
+    width: 70%;
+    height: 100%;
+    margin: auto;
+    /* border: 1px solid black; */
+}
+
+.titleDiv {
+    display: flex;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+.titleDiv > div:nth-child(1) {
+    font-size: 1.5rem;
+    padding-right: 1rem;
+}
+
+.titleDiv > div:nth-child(2) {
+    font-size: 1.3rem;
+    padding-left: 1rem;
+    color: #676767;
+    border-left: 2px solid #676767;
+}
+
+.titleDiv ~ p {
+    /* margin-left: 0; */
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+form {
+    width: 80%;
+    height: 2.1rem;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid black; */
+    
+}
+form > input {
+    width: 50%;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.slct {
+    appearance: button;
+    width: 20%;
+    height: 100%;
+    /* padding: 10px; */
+    border-radius: 5px;
+}
+
+form > button {
+    width: 20%;
+    height: 2.1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+}

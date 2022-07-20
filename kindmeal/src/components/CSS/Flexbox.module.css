@@ -1,0 +1,100 @@
+.mainFlexBox {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    padding: 1rem 0;
+    background-image: linear-gradient(to bottom,white 80%,#E1E1E1 100%);
+}
+
+
+
+.flexMain {
+    width: 70%;
+    min-width: 900px;
+    height: 17rem;
+    margin: 2.5rem auto;
+    /* display: flex; */
+    border: 1px solid rgb(177, 169, 169);
+    box-shadow: 0px 0px 6px #e0e0e0;
+    box-sizing: border-box;
+    padding: 0.5rem 0.8rem;
+    background-color: white;
+}
+
+.titleDiv {
+    width: 100%;
+    height: 2rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+.titleDiv > p {
+    font-size: 1.5rem;
+    color: #676767;
+}
+
+.listBox {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+}
+
+.listBox > a {
+    color: #2185FF;
+    text-decoration: none;
+    font-size: 1.15rem;
+}
+
+.listBox > a:hover {
+    text-decoration: underline;
+}
+
+.cardBox {
+    width: 100%;
+    height: 13.5rem;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    width: 18.5%;
+    height: 100%;
+    /* border: 1px solid black; */
+}
+
+.cardImgDiv {
+    width: 100%;
+    height: 85%;
+    
+    /* border: 1px solid black; */
+}
+
+.cardImgDiv > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.card > p {
+    margin: 0;
+    font-size: 0.7rem;
+}
+
+.card > a {
+    margin: 0;
+    font-size: 0.7rem;
+    text-decoration: none;
+    color: gray;
+}
+
+.card > a:hover {
+    text-decoration: underline;
+}

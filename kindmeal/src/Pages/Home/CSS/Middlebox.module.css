@@ -1,0 +1,27 @@
+.mainBox {
+    width: 70%;
+    height: 15rem;
+    margin: 4rem auto;
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+}
+
+.singleMiddle {
+    width: 23%;
+    height: 15rem;
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 1rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.singleMiddle > h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.singleMiddle > p {
+    font-size: 0.9rem;
+}
