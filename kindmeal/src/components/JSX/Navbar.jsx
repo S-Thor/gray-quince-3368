@@ -8,7 +8,7 @@ const links = [
     title: "Home",
   },
   {
-    to: "/recipies",
+    to: "/recipes",
     title: "Recipes",
   },
   {

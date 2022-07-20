@@ -1,0 +1,73 @@
+.logDiv {
+    width: 35%;
+    height: auto;
+    margin: 2rem auto;
+    /* border: 1px solid black; */
+    box-sizing: border-box;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.logDiv > p {
+    font-size: 1.5rem;
+    color: #676767;
+}
+
+
+.logoDiv > img {
+    width: 80%;
+    
+}
+
+form > input {
+    width: 60%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    border: 0.5px solid gray;
+}
+
+form > button {
+    width: 45%;
+    padding: 0.5rem;
+    background-color: #2BB673;
+    color: white;
+    font-size: 1.5rem;
+    border: 0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+
+form > button:hover {
+    background-color: #339264;
+}
+
+.fbBtn {
+    width: 55%;
+    margin: 1rem 0;
+    padding: 0.8rem;
+    background-color: rgb(61, 61, 196);
+    color: white;
+    font-size: 1.2rem;
+    border: 0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.anotherLog {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.anotherLog > a {
+    text-decoration: none;
+    color: #676767;
+}
+
+.anotherLog > a:hover {
+    text-decoration: underline;
+}
