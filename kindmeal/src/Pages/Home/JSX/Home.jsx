@@ -5,6 +5,7 @@ import Navbar from '../../../components/JSX/Navbar';
 import MainSlider from './MainSlider';
 import Save from './Save';
 import { FlexBoxData } from '../../../Data/AllData';
+import MiddleSection from './MiddleSection';
 
 const Home = () => {
   return (
@@ -12,9 +13,10 @@ const Home = () => {
         <Heading/>
         <Navbar/>
         <MainSlider/>
-        {/* <Save/> */}
-        <FlexBox/>
         
+        <FlexBox/>
+        <MiddleSection/>
+        <Save/>
     </div>
   )
 }

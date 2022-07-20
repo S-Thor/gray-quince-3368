@@ -26,9 +26,9 @@
 
 }
 
-.socialDiv > img {
-    width: 25%;
-    height: 25%;
+.socialIcon {
+    width: 80%;
+    height: 90%;
     margin-right: 1rem;
 }
 

@@ -20,7 +20,10 @@ import super2 from "../Images/Superheroes/super2.jpg";
 import super3 from "../Images/Superheroes/super3.jpg";
 import super4 from "../Images/Superheroes/super4.jpg";
 import super5 from "../Images/Superheroes/super5.jpg";
-
+import middle1 from "../Images/LogoIcon/m1.png";
+import middle2 from "../Images/LogoIcon/m2.png";
+import middle3 from "../Images/LogoIcon/m3.png";
+import middle4 from "../Images/LogoIcon/m4.png";
 
 export const dog = latest1;
 
@@ -139,5 +142,27 @@ export const FlexBoxData = [
                 desc: 'RaindyKam'
             }
         ]
+    }
+];
+
+export const middleBoxData = [
+    {
+        image: middle1,
+        title: "Get Great Deals",
+        desc: "Show our FREE digital coupons to instantly enjoy exciting deals"
+    },
+    {
+        image: middle2,
+        title: "Share KindMoments",
+        desc: "Spread the joy by sharing your yummy dining moments"
+    },
+    {
+        image: middle3,
+        title: "Discover Delicious Food",
+        desc: "Explore the latest exquisite offerings and creative menus"
+    },{
+        image: middle4,
+        title: "Meet Food Lovers",
+        desc: "Make new, compassionate friends and share great food tips"
     }
 ]

@@ -7,7 +7,7 @@ import dog from "../../Images/Latest/latest1.jpg";
 const FlexBox = () => {
   // console.log("DT:",data);
   return (
-    <>
+    <div className={styles.mainFlexBox}>
     {FlexBoxData.map((dt) => (
         <div key={dt.title} className={styles.flexMain}>
             <div className={styles.titleDiv}>
@@ -32,7 +32,7 @@ const FlexBox = () => {
             </div>
         </div>
     ))}
-    </>
+    </div>
   )
 }
 
