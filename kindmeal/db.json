@@ -352,6 +352,13 @@
       "password": "dcvfevfvfv",
       "username": "Samurai",
       "id": 3
+    },
+    {
+      "isAuth": false,
+      "email": "",
+      "password": "",
+      "username": "",
+      "id": 4
     }
   ]
 }

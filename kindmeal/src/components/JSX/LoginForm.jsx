@@ -1,25 +1,33 @@
-import React,{useState} from 'react';
+import React,{useState,useContext} from 'react';
 import styles from "../CSS/Loginform.module.css";
 import logo from "../../Images/LogoIcon/kmlogo.png";
 import axios from 'axios';
+import { AuthContext } from '../../Context/AuthContext';
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
   const [username,setUserName] = useState('');
   const [password,setPassword] = useState('');
+  const navigate = useNavigate();
+  const auth = useContext(AuthContext);
+  console.log("AUTH:",auth);
 
   function handleSubmit(e) {
     e.preventDefault();
     console.log("SSS");
-    axios.get(`http://localhost:8080/users`,{
-      params: {
-        username: username,
-        password: password
-      }
-    })
-    .then((res) => {
-      console.log("RES:",res);
-    })
-    .catch((err) => console.log(err));
+    auth.login({username: username,password: password});
+    navigate(`/${username}`);
+  }
+
+  function handleSub(e) {
+    e.preventDefault();
+    axios.get(`http://localhost:8080/users`)
+        .then((res) => {
+          console.log("R1:",res);
+          axios.get(`http://localhost:8080/users/1`)
+            .then((res) => console.log("R3:",res))})
+        
+        .catch((err) => console.log(err));
   }
   return (
     <div className={styles.logDiv}>
