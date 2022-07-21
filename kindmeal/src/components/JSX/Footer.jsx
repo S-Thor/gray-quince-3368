@@ -22,10 +22,10 @@ const Footer = () => {
     <div className={styles.footerMain}>
       <div className={styles.listItems}>
         {footerData.map((data) => (
-          <ul className={styles.titleDiv}>
+          <ul key={data.title} className={styles.titleDiv}>
             <p className={styles.listTitle}>{data.title}</p>
             {data.listItem.map((item) => (
-              <Link to="/" className={styles.listItem}>
+              <Link key={item} to="/" className={styles.listItem}>
                 <li>{item}</li>
               </Link>
             ))}

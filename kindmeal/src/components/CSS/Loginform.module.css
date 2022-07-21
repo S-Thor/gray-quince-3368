@@ -43,7 +43,7 @@
 
 .logForm > button {
     width: 70%;
-    /* padding: 0.5rem; */
+    padding: 0.5rem;
     background-color: #2BB673;
     color: white;
     font-size: 1.5rem;
@@ -127,7 +127,7 @@
 
 .signForm > button {
     width: 70%;
-    /* padding: 0.5rem; */
+    padding: 0.5rem;
     background-color: #2BB673;
     color: white;
     font-size: 1.5rem;

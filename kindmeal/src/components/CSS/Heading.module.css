@@ -53,3 +53,39 @@
     cursor: pointer;
 }
 
+.isAuthDiv {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    
+    justify-content: space-evenly;
+    /* border: 1px solid black; */
+}
+
+.isAuthDiv > button {
+    padding: 0.1rem 1.5rem;
+    border-radius: 5px;
+    background-color: #666666;
+    color: white;
+    text-align: center;
+    font-weight: 100;
+    border: none;
+}
+
+.isAuthDiv > button:hover {
+    background-color: #555555;
+    cursor: pointer;
+}
+
+.cartDiv {
+    position: relative;
+    /* border: 1px solid black; */
+}
+
+.cartDiv > span {
+    position: absolute;
+    left: 40%;
+    top: 20%;
+    color: white;
+}
+
