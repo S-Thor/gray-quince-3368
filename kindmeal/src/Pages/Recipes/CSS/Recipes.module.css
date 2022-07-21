@@ -133,7 +133,9 @@
     width: 70%;
     height: auto;
     margin: auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(auto);
     justify-content:left;
     /* align-items: center; */
     gap: 2rem;
@@ -142,7 +144,7 @@
 }
 
 .singleCard {
-    width: 31%;
+    /* width: 31%; */
     height: 20rem;
     /* border: 1px solid red; */
     border-radius: 10px;
@@ -168,6 +170,7 @@
     display: flex;
     gap: 10px;
     align-items: center;
+    
 }
 
 .chefAvatarDiv > img {
@@ -178,9 +181,11 @@
 }
 
 .chefLink {
+    
     text-decoration: none;
     color: #676767;
     font-size: 0.9rem;
+    /* border: 1px solid black; */
 }
 
 .chefLink:hover {
@@ -188,7 +193,7 @@
 }
 
 .discount {
-    width: 5rem;
+    width: 8rem;
     height: 60%;
     background-color: #EF3E3E;
     color: white;
@@ -196,6 +201,7 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
 }
 
 .recImageDiv {

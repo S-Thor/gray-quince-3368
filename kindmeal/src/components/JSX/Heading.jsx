@@ -29,10 +29,10 @@ const Heading = () => {
         <Link to="/twitter"><img className={styles.socialIcon} src={twitter} alt="blogLogo" /></Link>
       </div>
         <div className={styles.isAuthDiv}>
-          <div className={styles.cartDiv}>
+          <Link to="/coupons"><div className={styles.cartDiv}>
             <img src={cart} alt=""/>
             <span>5</span>
-          </div>
+          </div></Link>
           <h3>{auth.user.username}</h3>
           <button onClick={handleLogout}>Logout</button>
         </div>

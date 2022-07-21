@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { useEffect,useState } from 'react'
 import Footer from '../../../components/JSX/Footer'
 import Heading from '../../../components/JSX/Heading'
 import Navbar from '../../../components/JSX/Navbar';
 import styles from "../CSS/Recipes.module.css";
 import { Link } from 'react-router-dom';
 import { IoMdTime,IoMdHeart } from "react-icons/io";
+import axios from 'axios';
 
 const Recipes = () => {
+  const [meals,setMeals] = useState([]);
+  const [page,setPage] = useState(1);
+  const added = false;
+  useEffect(() => {
+    axios.get(`http://localhost:8080/meals?_page=${page}&_limit=6`)
+      .then((res) => {console.log(res);setMeals(res.data);})
+      .catch((err) => console.log(err));
+  },[page])
   return (
     <div>
         <Heading/>
@@ -40,50 +49,50 @@ const Recipes = () => {
         <div className={styles.mainRecipes}>
 
         <div className={styles.pageBtnDiv}>
-          <button>First</button>
-          <button>Previous</button>
-          <button>1</button>
-          <button>Next</button>
+          <button onClick={() => setPage(1)}>First</button>
+          <button disabled={page === 1} onClick={() => setPage(page - 1)}>Previous</button>
+          <button>{page}</button>
+          <button onClick={() => setPage(page + 1)}>Next</button>
           <button>Last</button>
         </div>
 
         <div className={styles.recipesDiv}>
-          
+          {meals.map((meal) => (
             <div className={styles.singleCard}>
               <div className={styles.chefDisDiv}>
                 <div className={styles.chefAvatarDiv}>
-                  <img src="https://www.kindmeal.my/photos/member/0/6-m.jpg" alt="" />
-                  <Link to="/" className={styles.chefLink}>KindMealChef</Link>
+                  <img src={meal.chef_avatar} alt="" />
+                  
                 </div>
-                
-                <div className={styles.discount}>20% OFF</div>
+                <Link to="/" className={styles.chefLink}>{meal.chef}</Link>
+                {added ? <div className={styles.discount}>Coupon Added</div> :<Link to="/" className={styles.discount}>Get {meal.discount} OFF</Link>}
               </div>
-              <Link to="/icecream"><div className={styles.recImageDiv}>
-              <img src="https://www.kindmeal.my/photos/recipe/121/121770-18872-l.jpg" alt=""/>
-                <h3 className={styles.recTitle}>Ice Scream Sandswiches</h3>
+              <Link to={`/${meal.dish}`}><div className={styles.recImageDiv}>
+              <img src={meal.dish_image} alt=""/>
+                <h3 className={styles.recTitle}>{meal.dish}</h3>
               </div></Link>
               <div className={styles.timeLikeDiv}>
                 <div className={styles.timeDiv}>
                     <IoMdTime style={{fontSize: '1.5rem',color: '#676767'}}/>
-                    <span>20 Mins</span>
+                    <span>{meal.prepare_time}</span>
                 </div>
                 <div className={styles.likeDiv}>
                     <IoMdHeart style={{fontSize: '1.5rem',color: '#676767'}}/>
-                    <span>15</span>
+                    <span>{meal.likes}</span>
                 </div>
               </div>
 
             </div>
+            ))}
             
-            <div className={styles.singleCard}></div>
-            <div className={styles.singleCard}></div>
+            
         </div>
 
         <div className={styles.pageBtnDiv}>
-          <button>First</button>
-          <button>Previous</button>
-          <button>1</button>
-          <button>Next</button>
+          <button onClick={() => setPage(1)}>First</button>
+          <button disabled={page === 1} onClick={() => setPage(page - 1)}>Previous</button>
+          <button>{page}</button>
+          <button onClick={() => setPage(page + 1)}>Next</button>
           <button>Last</button>
         </div>
 

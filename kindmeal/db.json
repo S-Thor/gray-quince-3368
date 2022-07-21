@@ -334,7 +334,7 @@
   "users": [
     {
       "id": 1,
-      "isAuth": false,
+      "isAuth": true,
       "email": "sahil.thoriya96@gmail.com",
       "password": "123456",
       "username": "The Gray Man"
