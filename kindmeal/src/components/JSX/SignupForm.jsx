@@ -19,6 +19,7 @@ const SignupForm = () => {
   function handleSubmit(e){
     e.preventDefault();
     console.log(email,password,username);
+    if (email !== "" && password !== "" && username != ""){
     axios.post(`http://localhost:8080/users`,{
       isAuth: false,
       email: email,
@@ -33,7 +34,7 @@ const SignupForm = () => {
       navigate("/login");
     })
     .catch((err) => console.log(err));
-    
+  }
   }
 
   return (

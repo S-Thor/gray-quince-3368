@@ -15,20 +15,12 @@ const LoginForm = () => {
   function handleSubmit(e) {
     e.preventDefault();
     console.log("SSS");
+    if (username !== "" && password !== "") {
     auth.login({username: username,password: password});
-    navigate(`/${username}`);
+    {auth.isAuth ? navigate(`/${username}`) : navigate(`/login`)};
+    }
   }
 
-  function handleSub(e) {
-    e.preventDefault();
-    axios.get(`http://localhost:8080/users`)
-        .then((res) => {
-          console.log("R1:",res);
-          axios.get(`http://localhost:8080/users/1`)
-            .then((res) => console.log("R3:",res))})
-        
-        .catch((err) => console.log(err));
-  }
   return (
     <div className={styles.logDiv}>
         <div className={styles.logoDiv}>

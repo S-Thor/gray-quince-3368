@@ -85,7 +85,7 @@
     margin: 1rem auto;
     /* border: 1px solid black; */
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
 }
 

@@ -334,8 +334,8 @@
   "users": [
     {
       "id": 1,
-      "isAuth": true,
-      "email": "sahil.thoriya96@gmail.com",
+      "isAuth": false,
+      "email": "sj@gmail.com",
       "password": "123456",
       "username": "The Gray Man"
     },
@@ -347,18 +347,11 @@
       "id": 2
     },
     {
-      "isAuth": false,
+      "isAuth": true,
       "email": "fde@gmail.com",
-      "password": "dcvfevfvfv",
+      "password": "111",
       "username": "Samurai",
       "id": 3
-    },
-    {
-      "isAuth": false,
-      "email": "",
-      "password": "",
-      "username": "",
-      "id": 4
     }
   ]
 }
