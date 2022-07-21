@@ -10,7 +10,7 @@ const LoginForm = () => {
         </div>
         
         <p>Member Login</p>
-        <form>
+        <form className={styles.logForm}>
             <input type="email" placeholder='Your Email'/><br/>
             <input type="password" placeholder='Your Password'/><br/>
             <button type="submit">Login</button>            
