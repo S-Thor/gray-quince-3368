@@ -347,7 +347,7 @@
       "id": 2
     },
     {
-      "isAuth": true,
+      "isAuth": false,
       "email": "fde@gmail.com",
       "password": "111",
       "username": "Samurai",

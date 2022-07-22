@@ -1,4 +1,4 @@
-import React,{useState,useContext} from 'react';
+import React,{useState,useContext, useEffect} from 'react';
 import styles from "../CSS/Loginform.module.css";
 import logo from "../../Images/LogoIcon/kmlogo.png";
 import axios from 'axios';
@@ -10,16 +10,25 @@ const LoginForm = () => {
   const [password,setPassword] = useState('');
   const navigate = useNavigate();
   const auth = useContext(AuthContext);
-  console.log("AUTH:",auth);
+  console.log("LOGAUTH:",auth);
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("SSS");
+    console.log("isAuth",auth.isAuth);
     if (username !== "" && password !== "") {
     auth.login({username: username,password: password});
-    {auth.isAuth ? navigate(`/${username}`) : navigate(`/login`)};
+    console.log("isAuth",auth.isAuth);
+    
     }
   }
+  useEffect(() => {
+  if (auth.user.isAuth) {
+    navigate(`/${username}`);
+  } else
+  {
+    navigate(`/login`);
+  }
+},[auth.user.isAuth])
 
   return (
     <div className={styles.logDiv}>

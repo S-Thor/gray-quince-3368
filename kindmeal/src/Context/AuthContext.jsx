@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
       })
       .then((res) => {
         console.log("LOG:", res);
-        if (res.data == []) {
+        if (res.data[0] == undefined) {
           alert("Wrong Passwod or UserName. Try Again");
           setIsAuth(() => false);
         } else {
