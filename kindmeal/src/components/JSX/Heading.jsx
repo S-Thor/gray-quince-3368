@@ -80,7 +80,7 @@ const Heading = () => {
       <Link to="/coupons">
         <div className={styles.cartDiv}>
           <img src={cart} alt="" />
-          <span>5</span>
+          <span>{auth.user.coupons}</span>
         </div>
       </Link>
       <h3>{auth.user.username}</h3>

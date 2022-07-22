@@ -334,20 +334,23 @@
   "users": [
     {
       "id": 1,
-      "isAuth": false,
+      "isAuth": true,
       "email": "sj@gmail.com",
       "password": "123456",
-      "username": "The Gray Man"
+      "username": "The Gray Man",
+      "coupons": 3
     },
     {
       "isAuth": false,
+      "coupons": 6,
       "email": "sss@gmail.com",
       "password": "1545612",
       "username": "SJ",
       "id": 2
     },
     {
-      "isAuth": false,
+      "isAuth": true,
+      "coupons": 4,
       "email": "fde@gmail.com",
       "password": "111",
       "username": "Samurai",

@@ -22,13 +22,13 @@ const LoginForm = () => {
     }
   }
   useEffect(() => {
-  if (auth.user.isAuth) {
+  if (auth.isAuth) {
     navigate(`/${username}`);
   } else
   {
     navigate(`/login`);
   }
-},[auth.user.isAuth])
+},[auth.isAuth])
 
   return (
     <div className={styles.logDiv}>

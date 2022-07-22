@@ -47,8 +47,16 @@ export const AuthProvider = ({ children }) => {
       .catch((err) => console.log(err));
   };
 
+
+  const addLikes = (id) => {
+      axios.patch(`http://localhost:8080/meals/${id}`,{likes: 1})
+        .then((res) => {
+          console.log("LIKES:",res);
+        })
+  }
+
   return (
-    <AuthContext.Provider value={{ isAuth, user, login, logout }}>
+    <AuthContext.Provider value={{ isAuth, user, login, logout,addLikes }}>
       {children}
     </AuthContext.Provider>
   );
