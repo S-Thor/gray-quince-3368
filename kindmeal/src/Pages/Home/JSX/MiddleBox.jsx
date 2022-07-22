@@ -6,7 +6,7 @@ const MiddleBox = () => {
   return (
     <div className={styles.mainBox}>
       {middleBoxData.map((data) => (
-        <div className={styles.singleMiddle}>
+        <div key={data.title} className={styles.singleMiddle}>
           <img src={data.image} alt="#" />
           <h3>{data.title}</h3>
           <p>{data.desc}</p>

@@ -37,18 +37,9 @@ const links = [
   },
 ];
 
-const baseStyle = {
-  color: "white",
-  textDecoration: "none",
-};
-
-const activeStyle = {
-  color: "white",
-  textDecoration: "none",
-};
-
 const Navbar = () => {
     // console.log(({isActive}));
+    
   return (
     <div className={styles.navDiv}>
         <div className={styles.linksDiv}>

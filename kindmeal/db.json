@@ -1,0 +1,357 @@
+{
+  "meals": [
+    {
+      "id": 1,
+      "dish": "Banana Bread Latte",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/103/103170-15237-l.jpg",
+      "chef": "Wolfgang Puck",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/0/6-m.jpg",
+      "discount": "10%",
+      "likes": 5,
+      "prepare_time": "5 Mins",
+      "category": "Beverages"
+    },
+    {
+      "id": 2,
+      "dish": "Hot Caramel Jam Recipe",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/1039/1039449-58866-l.jpg",
+      "chef": "Jamie Oliver",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/28/28122-m.jpg",
+      "discount": "15%",
+      "likes": 15,
+      "prepare_time": "20 Mins",
+      "category": "Beverages"
+    },
+    {
+      "id": 3,
+      "dish": "Coffee Nudge",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/95/95408-13279-l.jpg",
+      "chef": "Gordon Ramsay",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/13/13040-m.jpg",
+      "discount": "20%",
+      "likes": 45,
+      "prepare_time": "20 Mins",
+      "category": "Beverages"
+    },
+    {
+      "id": 4,
+      "dish": "Caravella Bellini",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/111/111883-17157-l.jpg",
+      "chef": "Sanjeev Kapoor",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/40/40177-m.jpg",
+      "discount": "25%",
+      "likes": 55,
+      "prepare_time": "20 Mins",
+      "category": "Beverages"
+    },
+    {
+      "id": 5,
+      "dish": "Café A La Russe (Chocolate Coffee)",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/104/104650-15556-l.jpg",
+      "chef": "Vikas Khanna",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/40/40202-m.jpg",
+      "discount": "10%",
+      "likes": 50,
+      "prepare_time": "20 Mins",
+      "category": "Beverages"
+    },
+    {
+      "id": 6,
+      "dish": "Pralines And Cream Cocktail",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/103/103164-15230-l.jpg",
+      "chef": "Salt Bae",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/14/14169-m.jpg",
+      "discount": "15%",
+      "likes": 55,
+      "prepare_time": "20 Mins",
+      "category": "Beverages"
+    },
+    {
+      "id": 7,
+      "dish": "Molasses Vinaigrette",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/117/117306-18246-l.jpg",
+      "chef": "Wolfgang Puck",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/0/6-m.jpg",
+      "discount": "20%",
+      "likes": 85,
+      "prepare_time": "16 Mins",
+      "category": "Salads"
+    },
+    {
+      "id": 8,
+      "dish": "Japanese-Inspired Cucumber Salad",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/111/111970-17175-l.jpg",
+      "chef": "Jamie Oliver",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/28/28122-m.jpg",
+      "discount": "25%",
+      "likes": 555,
+      "prepare_time": "10 Mins",
+      "category": "Salads"
+    },
+    {
+      "id": 9,
+      "dish": "Marinated Three Bean Salad",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/106/106406-16026-l.jpg",
+      "chef": "Gordon Ramsay",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/13/13040-m.jpg",
+      "discount": "10%",
+      "likes": 455,
+      "prepare_time": "6 Hrs 10 Mins",
+      "category": "Salads"
+    },
+    {
+      "id": 10,
+      "dish": "Black Bean And Sweet Potato Salad",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/99/99809-14375-l.jpg",
+      "chef": "Sanjeev Kapoor",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/40/40177-m.jpg",
+      "discount": "15%",
+      "likes": 405,
+      "prepare_time": "40 Mins",
+      "category": "Salads"
+    },
+    {
+      "id": 11,
+      "dish": "Ceasar Dressing",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/1000/1000012-19420-l.jpg",
+      "chef": "Vikas Khanna",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/40/40202-m.jpg",
+      "discount": "20%",
+      "likes": 205,
+      "prepare_time": "20 Mins",
+      "category": "Salads"
+    },
+    {
+      "id": 12,
+      "dish": "Seven Layer Salad Recipe / Healthy Salad",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/1039/1039460-58888-l.jpg",
+      "chef": "Salt Bae",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/14/14169-m.jpg",
+      "discount": "25%",
+      "likes": 235,
+      "prepare_time": "15 Mins",
+      "category": "Salads"
+    },
+    {
+      "id": 13,
+      "dish": "Double-Chocolate Muffins",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/113/113228-17446-l.jpg",
+      "chef": "Wolfgang Puck",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/0/6-m.jpg",
+      "discount": "10%",
+      "likes": 135,
+      "prepare_time": "35 Mins",
+      "category": "Breakfast"
+    },
+    {
+      "id": 14,
+      "dish": "Maple French Toast Muffins",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/86/86878-11091-l.jpg",
+      "chef": "Jamie Oliver",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/28/28122-m.jpg",
+      "discount": "15%",
+      "likes": 509,
+      "prepare_time": "50 Mins",
+      "category": "Breakfast"
+    },
+    {
+      "id": 15,
+      "dish": "Potato Omelette",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/104/104886-15609-l.jpg",
+      "chef": "Gordon Ramsay",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/13/13040-m.jpg",
+      "discount": "20%",
+      "likes": 578,
+      "prepare_time": "30 Mins",
+      "category": "Breakfast"
+    },
+    {
+      "id": 16,
+      "dish": "Italian Omelet",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/94/94705-13073-l.jpg",
+      "chef": "Sanjeev Kapoor",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/40/40177-m.jpg",
+      "discount": "25%",
+      "likes": 543,
+      "prepare_time": "5 Mins",
+      "category": "Breakfast"
+    },
+    {
+      "id": 17,
+      "dish": "Avocado Chocolate Quinoa",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/1000/1000010-19417-l.jpg",
+      "chef": "Vikas Khanna",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/40/40202-m.jpg",
+      "discount": "10%",
+      "likes": 395,
+      "prepare_time": "30 Mins",
+      "category": "Breakfast"
+    },
+    {
+      "id": 18,
+      "dish": "How To Make One Pan Egg Toast",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/1039/1039461-58890-l.jpg",
+      "chef": "Salt Bae",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/14/14169-m.jpg",
+      "discount": "15%",
+      "likes": 955,
+      "prepare_time": "3 Mins",
+      "category": "Breakfast"
+    },
+    {
+      "id": 19,
+      "dish": "Vegetable Chili",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/93/93193-12653-l.jpg",
+      "chef": "Wolfgang Puck",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/0/6-m.jpg",
+      "discount": "20%",
+      "likes": 1005,
+      "prepare_time": "31 Mins",
+      "category": "Main Dishes"
+    },
+    {
+      "id": 20,
+      "dish": "White Beans With Vegetables",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/100/100934-14662-l.jpg",
+      "chef": "Jamie Oliver",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/28/28122-m.jpg",
+      "discount": "25%",
+      "likes": 205,
+      "prepare_time": "22 Mins",
+      "category": "Main Dishes"
+    },
+    {
+      "id": 21,
+      "dish": "Nasi Lemak",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/1000/1000011-19418-l.jpg",
+      "chef": "Gordon Ramsay",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/13/13040-m.jpg",
+      "discount": "10%",
+      "likes": 550,
+      "prepare_time": "45 Mins",
+      "category": "Main Dishes"
+    },
+    {
+      "id": 22,
+      "dish": "Stir-fried Broccoli Rice",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/1039/1039459-58887-l.jpg",
+      "chef": "Sanjeev Kapoor",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/40/40177-m.jpg",
+      "discount": "15%",
+      "likes": 517,
+      "prepare_time": "1 Hr",
+      "category": "Main Dishes"
+    },
+    {
+      "id": 23,
+      "dish": "BRINJAL CURRY",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/1039/1039466-58897-l.jpg",
+      "chef": "Vikas Khanna",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/40/40202-m.jpg",
+      "discount": "20%",
+      "likes": 445,
+      "prepare_time": "11 Mins",
+      "category": "Main Dishes"
+    },
+    {
+      "id": 24,
+      "dish": "Pizza Crust",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/99/99202-14233-l.jpg",
+      "chef": "Salt Bae",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/14/14169-m.jpg",
+      "discount": "25%",
+      "likes": 765,
+      "prepare_time": "12 Mins",
+      "category": "Main Dishes"
+    },
+    {
+      "id": 25,
+      "dish": "White Bean Soup With Salad Salsa",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/102/102052-14920-l.jpg",
+      "chef": "Wolfgang Puck",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/0/6-m.jpg",
+      "discount": "10%",
+      "likes": 599,
+      "prepare_time": "4 Hrs 55 Mins",
+      "category": "Soups"
+    },
+    {
+      "id": 26,
+      "dish": "Chickpea Soup With Spinach",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/31/31180-2627-l.jpg",
+      "chef": "Jamie Oliver",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/28/28122-m.jpg",
+      "discount": "15%",
+      "likes": 501,
+      "prepare_time": "54 Mins",
+      "category": "Soups"
+    },
+    {
+      "id": 27,
+      "dish": "Spicy Black Bean Soup",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/42/42861-4352-l.jpg",
+      "chef": "Gordon Ramsay",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/13/13040-m.jpg",
+      "discount": "20%",
+      "likes": 375,
+      "prepare_time": "35 Mins",
+      "category": "Soups"
+    },
+    {
+      "id": 28,
+      "dish": "Fresh Vegetable Basil Soup",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/45/45040-4762-l.jpg",
+      "chef": "Sanjeev Kapoor",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/40/40177-m.jpg",
+      "discount": "25%",
+      "likes": 165,
+      "prepare_time": "1 Hr 15 Mins",
+      "category": "Soups"
+    },
+    {
+      "id": 29,
+      "dish": "Sweet Banana Soup",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/17/17958-1104-l.jpg",
+      "chef": "Vikas Khanna",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/40/40202-m.jpg",
+      "discount": "12%",
+      "likes": 325,
+      "prepare_time": "55 Mins",
+      "category": "Soups"
+    },
+    {
+      "id": 30,
+      "dish": "Spicy Miso And Pumpkin Soup",
+      "dish_image": "https://www.kindmeal.my/photos/recipe/31/31254-2640-l.jpg",
+      "chef": "Salt Bae",
+      "chef_avatar": "https://www.kindmeal.my/photos/member/14/14169-m.jpg",
+      "discount": "18%",
+      "likes": 185,
+      "prepare_time": "20 Mins",
+      "category": "Soups"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "isAuth": false,
+      "email": "sj@gmail.com",
+      "password": "123456",
+      "username": "The Gray Man"
+    },
+    {
+      "isAuth": false,
+      "email": "sss@gmail.com",
+      "password": "1545612",
+      "username": "SJ",
+      "id": 2
+    },
+    {
+      "isAuth": true,
+      "email": "fde@gmail.com",
+      "password": "111",
+      "username": "Samurai",
+      "id": 3
+    }
+  ]
+}

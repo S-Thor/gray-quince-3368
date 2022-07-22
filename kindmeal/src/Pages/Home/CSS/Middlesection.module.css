@@ -13,9 +13,10 @@
     width: 70%;
     margin: auto;
     font-size: 1.2rem;
-    letter-spacing: 0.7px;
+    /* letter-spacing: 0.7px; */
     /* margin-right: 1rem; */
     font-weight: 500;
+    color: #888888;
 }
 
 .introDiv {
@@ -28,13 +29,15 @@
 .introDiv > h2 {
     font-size: 2.2rem;
     font-weight: 500;
-    letter-spacing: 1px;
+    /* letter-spacing: 1px; */
+    color: #676767;
 }
 
 .introDiv > h3 {
-    font-size: 1.9rem;
+    font-size: 1.5rem;
     font-weight: 500;
-    letter-spacing: 0.7px;
+    /* letter-spacing: 0.7px; */
+    color: #888888;
 }
 
 
@@ -52,6 +55,7 @@
     letter-spacing: 1px;
     margin-right: 1rem;
     font-weight: 500;
+    color: #999999;
 }
 
 .petDiv > img {
