@@ -1,112 +1,184 @@
-.singleCard {
-    width: 40%;
-    height: 30rem;
+.mainDetailsDiv {
+    width: 60%;
+    height: 25rem;
     margin: 2rem auto;
-    /* border: 1px solid red; */
+    /* border: 1px solid black; */
     border-radius: 10px;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
 }
 
-.chefDisDiv {
+.dishName {
     width: 100%;
-    height: 4rem;
+    height: 3rem;
+    margin: 0;
     /* border: 1px solid black; */
+    background-image: linear-gradient(to bottom right, #c7b9b9 30%,rgb(239, 220, 220) 70%);
+    /* background-image: linear-gradient(to bottom right,#EF3E3E 35%,#2BB673 70%); */
+    border-radius: 10px 10px 0 0;
     box-sizing: border-box;
-    padding: 3px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.chefAvatarDiv {
-    width: 4rem;
-    height: 100%;
-    /* border: 1px solid black; */
-    border-radius: 50%;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    
-}
-
-.chefAvatarDiv > img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.chefLink {
-    
-    text-decoration: none;
-    color: #676767;
-    font-size: 0.9rem;
-    /* border: 1px solid black; */
-}
-
-.chefLink:hover {
-    text-decoration: underline;
-}
-
-.discount {
-    width: auto;
-    height: 60%;
-    background-color: #EF3E3E;
-    color: white;
-    border-radius: 5px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none;
-    box-sizing: border-box;
-    padding: 0 0.5rem;
-    border: none;
-    cursor: pointer;
+    
 }
 
-.recImageDiv {
-    width: 100%;
-    height: 23rem;
+.imageDetailContainer {
+    display: flex;
+}
+.imageDiv,.detailsDiv {
+    width: 50%;
+    height: 22rem;
     /* border: 1px solid black; */
-    position: relative;
 }
 
-.recImageDiv > img {
+.detailsDiv {
+    border-radius: 0 0 10px 0;
+    
+}
+
+.imageDiv > img {
     width: 100%;
     height: 100%;
+    border-radius: 0 0 0 10px;
     object-fit: cover;
 }
 
-.recTitle {
+.flexDetailsDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
+    height: 33%;
+    /* border: 1px solid red; */
+    border-radius: 0 0 10px 0;
+}
+
+.flexDetailsDiv:nth-child(2) {
+    justify-content: center;
+}
+
+.detailDiv {
+    width: 33%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     /* border: 1px solid black; */
-    padding: 0.3rem 0;
-    color: white;
-    background-color: rgb(0,0,0,0.4);
-    font-weight: 500;
-    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.detailDiv > h3 {
     margin: 0;
-    bottom: 0;
+    color: #2BB673;
+}
+.detailDiv > h2 {
+    margin: 0;
+    color: #EF3E3E;
 }
 
-.timeLikeDiv {
+
+/* <-------Loader-----------> */
+
+.loaderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #222229;
+  }
+  
+  .planet {
+    display: block;
+    width: 125px;
+    height: 125px;
+    position: relative;
+    transform-style: preserve-3d;
+    border-radius: 50%;
+    background: #fcc96b;
+    background: rgb(252, 201, 107);
+    background: linear-gradient(
+      180deg,
+      rgba(252, 201, 107, 1) 0%,
+      rgba(252, 201, 107, 1) 15%,
+      rgba(247, 174, 1, 1) 15%,
+      rgba(247, 174, 1, 1) 19%,
+      rgba(252, 201, 107, 1) 19%,
+      rgba(252, 201, 107, 1) 22%,
+      rgba(247, 174, 1, 1) 22%,
+      rgba(247, 174, 1, 1) 28%,
+      rgba(252, 201, 107, 1) 28%,
+      rgba(252, 201, 107, 1) 31%,
+      rgba(252, 201, 107, 1) 33%,
+      rgba(252, 201, 107, 1) 36%,
+      rgba(247, 174, 1, 1) 36%,
+      rgba(247, 174, 1, 1) 48%,
+      rgba(252, 201, 107, 1) 48%,
+      rgba(252, 201, 107, 1) 55%,
+      rgba(247, 174, 1, 1) 55%,
+      rgba(247, 174, 1, 1) 66%,
+      rgba(252, 201, 107, 1) 66%,
+      rgba(252, 201, 107, 1) 70%,
+      rgba(247, 174, 1, 1) 70%,
+      rgba(247, 174, 1, 1) 73%,
+      rgba(252, 201, 107, 1) 73%,
+      rgba(252, 201, 107, 1) 82%,
+      rgba(247, 174, 1, 1) 82%,
+      rgba(247, 174, 1, 1) 86%,
+      rgba(252, 201, 107, 1) 86%
+    );
+    box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.25),
+      inset 8px -4px 6px rgba(199, 128, 0, 0.5),
+      inset -8px 4px 8px rgba(255, 235, 199, 0.5),
+      inset 20px -5px 12px #f7ae01,
+      0 0 100px rgba(255, 255, 255, 0.35);
+    transform: rotateZ(-15deg);
+  }
+  
+  .planet::before {
+    position: absolute;
+    content: "";
+    display: block;
     width: 100%;
-    height: 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* border: 1px solid black; */
+    height: 100%;
     box-sizing: border-box;
-    padding: 0 1rem;
-}
+    border: 16px solid #7b6f42;
+    border-top-width: 0;
+    border-radius: 50%;
+    box-shadow: 0 -2px 0 #b1a693;
+    animation: rings1 0.8s infinite linear;
+  }
+  
+  .planet::after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 8px solid #b1a693;
+    border-top-width: 0;
+    border-radius: 50%;
+    box-shadow: 0 -2px 0 #7b6f42;
+    animation: rings2 0.8s infinite linear;
+  }
+  
+  @keyframes rings1 {
+    0% {
+      transform: rotateX(65deg) rotateZ(0deg) scale(1.75);
+    }
+    100% {
+      transform: rotateX(65deg) rotateZ(360deg) scale(1.75);
+    }
+  }
+  
+  @keyframes rings2 {
+    0% {
+      transform: rotateX(65deg) rotateZ(0deg) scale(1.7);
+    }
+    100% {
+      transform: rotateX(65deg) rotateZ(360deg) scale(1.7);
+    }
+  }
+  
 
-.timeDiv,.likeDiv {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 5px;
-}
-
-.timeDiv > span,.likeDiv > span {
-    font-size: 0.8rem;
-}
+  /* <-----------Loader---------> */

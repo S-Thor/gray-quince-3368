@@ -11,12 +11,15 @@ const LoginForm = () => {
   const auth = useContext(AuthContext);
   console.log("LoginAuth:",auth);
   const navigate = useNavigate();
+  const [loading,setLoading] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
+    setLoading(() => true);
     if (username !== "" && password !== "") {
     auth.login({username: username,password: password});
     }
+    setLoading(() => false);
   }
 
   useEffect(() => {
@@ -26,7 +29,13 @@ const LoginForm = () => {
   {
     navigate(`/login`);
   }
-},[auth.isAuth])
+},[auth.isAuth]);
+
+
+if (loading)
+{
+  return <h1>Loading...</h1>
+}
 
   return (
     <div className={styles.logDiv}>

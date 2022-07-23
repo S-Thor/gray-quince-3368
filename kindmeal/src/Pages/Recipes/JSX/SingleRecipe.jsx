@@ -1,78 +1,82 @@
-import React,{useState,useEffect,useContext} from "react";
+import React,{useEffect, useState} from 'react'
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 import styles from "../CSS/SingleRecipe.module.css";
-import Heading from "../../../components/JSX/Heading";
-import Navbar from "../../../components/JSX/Navbar";
-import Footer from "../../../components/JSX/Footer";
-import { Link, useParams } from "react-router-dom";
-import { IoMdTime, IoMdHeart } from "react-icons/io";
-import {MealContext} from "../../../Context/MealContext";
-import axios from "axios";
-
-
-const meal = {
-  "id": 1,
-  "dish": "Banana Bread Latte",
-  "dish_image": "https://www.kindmeal.my/photos/recipe/103/103170-15237-l.jpg",
-  "chef": "Wolfgang Puck",
-  "chef_avatar": "https://www.kindmeal.my/photos/member/0/6-m.jpg",
-  "discount": "10%",
-  "likes": 5,
-  "prepare_time": "5 Mins",
-  "category": "Beverages"
-};
-
-const added = false;
-
-// const coup = Date.now();
-// console.log(coup.getHours());
+import Heading from '../../../components/JSX/Heading';
+import Navbar from '../../../components/JSX/Navbar';
+import Footer from '../../../components/JSX/Footer';
 
 const SingleRecipe = () => {
+    const [single,setSingle] = useState([]);
+    const [loading,setLoading] = useState(false);
+    const [error,setError] = useState(false);
+    const params = useParams();
+    console.log("PARAM:",params);
+    
+    function getData() {
+        axios.get(`https://json-server-project-masai.herokuapp.com/meals/${params.recipe}`)
+            .then((res) => {console.log(res);setSingle(res.data);})
+            .catch((err) => setError(() => err))
+    }
 
-  const mealCo = useContext(MealContext);
-  console.log("SINGLEMEAL:",mealCo);
+    useEffect(() => {
+        setLoading(true);
+        getData();
+        setLoading(false);
+    },[])
+   
+    if(loading){
+        return <div className={styles.loaderContainer}><div className={styles.planet}></div></div>
+    }
+    
 
   return (
-    <div className={styles.singleDiv}>
-      <Heading />
-      <Navbar />
-
-      <div key={meal.id} className={styles.singleCard}>
-        <div className={styles.chefDisDiv}>
-          <div className={styles.chefAvatarDiv}>
-            <img src={meal.chef_avatar} alt="" />
-          </div>
-          <Link to="/" className={styles.chefLink}>
-            {meal.chef}
-          </Link>
-          {added ? (
-            <div className={styles.discount}>Coupon Added</div>
-          ) : (
-            <button className={styles.discount}>
-              Redeem Coupon
-            </button>
-          )}
+    <div>
+        <Heading/>
+        <Navbar/>
+        <div className={styles.mainDetailsDiv}>
+            <h2 className={styles.dishName}>{single.dish}</h2>
+            <div className={styles.imageDetailContainer}>
+                <div className={styles.imageDiv}>
+                    <img src={single.dish_image} alt="dish"/>
+                </div>
+                <div className={styles.detailsDiv}>
+                    <div className={styles.flexDetailsDiv}>
+                        <div className={styles.detailDiv}>
+                            <h2>Time</h2>
+                            <h3> {single.prepare_time}</h3>
+                        </div>
+                        <div className={styles.detailDiv}>
+                            <h2>Chef</h2>
+                            <h3> {single.chef}</h3>
+                        </div>
+                    </div>
+                    <div className={styles.flexDetailsDiv}>
+                        <div className={styles.detailDiv}>
+                            <h2>Likes</h2>
+                            <h3> {single.likes}</h3>
+                        </div>
+                    </div>
+                    <div className={styles.flexDetailsDiv}>
+                        <div className={styles.detailDiv}>
+                            <h2>Category</h2>
+                            <h3> {single.category}</h3>
+                        </div>
+                        <div className={styles.detailDiv}>
+                            <h2>Discount</h2>
+                            <h3> {single.discount}</h3>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+            </div>
         </div>
-        <Link to={`/${meal.dish}`}>
-          <div className={styles.recImageDiv}>
-            <img src={meal.dish_image} alt="" />
-            <h3 className={styles.recTitle}>{meal.dish}</h3>
-          </div>
-        </Link>
-        <div className={styles.timeLikeDiv}>
-          <div className={styles.timeDiv}>
-            <IoMdTime style={{ fontSize: "1.5rem", color: "#676767" }} />
-            <span>{meal.prepare_time}</span>
-          </div>
-          <div className={styles.likeDiv}>
-            <IoMdHeart style={{ fontSize: "1.5rem", color: "#676767" }} />
-            <span>{meal.likes}</span>
-          </div>
-        </div>
-      </div>
 
-      <Footer/>
+        <Footer/>
     </div>
-  );
-};
+  )
+}
 
-export default SingleRecipe;
+export default SingleRecipe

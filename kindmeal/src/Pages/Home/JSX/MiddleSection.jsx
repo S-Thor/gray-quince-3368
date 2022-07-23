@@ -19,22 +19,22 @@ const MiddleSection = () => {
         </h3>
       </div>
       <MiddleBox />
-        <h4>
-          Any restaurant or cafe can join KindMeal, vegetarian or not, as long
-          as the deals and menu featured are meat-free. Enjoy a great meat-free
-          dining experience. Easily save animal lives, health, environment and
-          money now!
-        </h4>
-        <div className={styles.joinBtnDiv}>
-            <button>
-                <h2>Join KindMeal Now</h2>
-                <h4>Your tasty journey begins here</h4>
-            </button>
-        </div>
-        <div className={styles.featuredDiv}>
-            <h3>As Featured In</h3>
-            <img src={featured} alt="#"/>
-        </div>
+      <h4>
+        Any restaurant or cafe can join KindMeal, vegetarian or not, as long as
+        the deals and menu featured are meat-free. Enjoy a great meat-free
+        dining experience. Easily save animal lives, health, environment and
+        money now!
+      </h4>
+      <div className={styles.joinBtnDiv}>
+        <button>
+          <h2>Join KindMeal Now</h2>
+          <h4>Your tasty journey begins here</h4>
+        </button>
+      </div>
+      <div className={styles.featuredDiv}>
+        <h3>As Featured In</h3>
+        <img src={featured} alt="#" />
+      </div>
     </div>
   );
 };

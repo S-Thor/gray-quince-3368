@@ -7,36 +7,48 @@ import { Link,useSearchParams } from "react-router-dom";
 import { IoMdTime, IoMdHeart } from "react-icons/io";
 import {MealContext} from "../../../Context/MealContext";
 import axios from "axios";
+import { AuthContext } from "../../../Context/AuthContext";
 
 const Recipes = () => {
   
   const [meals, setMeals] = useState([]);
-  
+  const [loading,setLoading] = useState(false);
+  const [error,setError] = useState(false);
   const [searchParams,setSearchParams] = useSearchParams();
   const [mealChef, setMealChef] = useState(searchParams.get("q") || "");
-  const [type, setType] = useState("");
-  const [page, setPage] = useState(Number(searchParams.get("page")) || 1);
+  const [type, setType] = useState("all");
+  const [page, setPage] = useState(1);
   const meal = useContext(MealContext);
+
+  const auth = useContext(AuthContext);
+  console.log("RECIPES-Auth:",auth);
   console.log("LikeContext:",meal);
-  const added = false;
   let [total,setTotal] = useState();
   useEffect(() => {
-    axios
-      .get(`http://localhost:8080/meals?_page=${page}&_limit=6`)
-      .then((res) => {
-        console.log(res);
-        setTotal(Number(res.headers["x-total-count"]));
-        setMeals(res.data);
-      })
-      .catch((err) => console.log(err));
+    setLoading(() => true);
+      getMeals();
+      setLoading(() => false);
   }, [page]);
+
+
+  const getMeals = () => {
+    axios
+    .get(`https://json-server-project-masai.herokuapp.com/meals?_page=${page}&_limit=6`)
+    .then((res) => {
+      console.log(res);
+      
+      setTotal(Number(res.headers["x-total-count"]));
+      setMeals(res.data);
+      
+    })
+    .catch((err) => {console.log(err);setError(() => err);});
+  }
 
   useEffect(() => {
     setSearchParams({
-        page,
         q: mealChef
     });
-},[setSearchParams,page,mealChef])
+},[setSearchParams,mealChef])
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -44,7 +56,7 @@ const Recipes = () => {
     console.log(mealChef, type);
     if (type === "all") {
       axios
-        .get(`http://localhost:8080/meals?q=${mealChef}&_limit=6`, {
+        .get(`https://json-server-project-masai.herokuapp.com/meals?q=${mealChef}&_limit=6`, {
           params: {
             category: [
               "Beverages",
@@ -64,10 +76,10 @@ const Recipes = () => {
           {
             setMeals(() => res.data);
           }})
-        .catch((err) => console.log(err));
+        .catch((err) => {console.log(err);setError(() => err);});
     } else {
       axios
-        .get(`http://localhost:8080/meals?q=${mealChef}`, {
+        .get(`https://json-server-project-masai.herokuapp.com/meals?q=${mealChef}`, {
           params: {
             category: [type],
           },
@@ -81,7 +93,7 @@ const Recipes = () => {
           {
             setMeals(() => res.data);
           }})
-        .catch((err) => console.log(err));
+        .catch((err) => {console.log(err);setError(() => err);});
     }
   }
 
@@ -90,13 +102,21 @@ const Recipes = () => {
       meal.addMeal(id);
   }
 
-  function addCoupon(ml) {
-    meal.addCoup(ml);
+  function addCoupon(coup,ml) {
+    auth.addCoup(coup,ml);
   }
 
-  function handleLikes(id,num) {
-    meal.addLikes(id,num);
+  function handleLikes(id,likes) {
+    console.log("I Like This");
+    axios.patch(`https://json-server-project-masai.herokuapp.com/meals/${id}`,{likes: likes + 1})
+          .then((res) => {
+            console.log("LIKE-RES:",res);
+            getMeals();
+          })
+          .catch((err) => console.log(err))
   }
+
+  
 
   return (
     <div>
@@ -143,15 +163,16 @@ const Recipes = () => {
 
       <div className={styles.mainRecipes}>
         <div className={styles.pageBtnDiv}>
-        <Link to={`/recipes/1`} className={styles.pageBtn}><button disabled={page === 1} onClick={() => setPage(1)}>First</button></Link>
-        <Link to={`/recipes/${page - 1}`} className={styles.pageBtn}><button disabled={page === 1} onClick={() => setPage(page - 1)}>
+        <Link to={`/recipes/page1`} className={styles.pageBtn}><button disabled={page === 1} onClick={() => setPage(1)}>First</button></Link>
+        <Link to={`/recipes/page${page - 1}`} className={styles.pageBtn}><button disabled={page === 1} onClick={() => setPage(page - 1)}>
             Previous
           </button></Link>
           <button>{page}</button>
-          <Link to={`/recipes/${page + 1}`} className={styles.pageBtn}><button disabled={page === total/6} onClick={() => setPage(page + 1)}>Next</button></Link>
-          <Link to={`/recipes/${total/6}`} className={styles.pageBtn}><button disabled={page === total/6} onClick={() => setPage(total/6)}>Last</button></Link>
+          <Link to={`/recipes/page${page + 1}`} className={styles.pageBtn}><button disabled={page === total/6} onClick={() => setPage(page + 1)}>Next</button></Link>
+          <Link to={`/recipes/page${total/6}`} className={styles.pageBtn}><button disabled={page === total/6} onClick={() => setPage(total/6)}>Last</button></Link>
         </div>
-
+        
+        {loading ? <h1>Loading....</h1> : 
         <div className={styles.recipesDiv}>
           {meals.map((meal) => (
             <div key={meal.id} className={styles.singleCard}>
@@ -162,13 +183,10 @@ const Recipes = () => {
                 <Link to="/" className={styles.chefLink}>
                   {meal.chef}
                 </Link>
-                {added ? (
-                  <div className={styles.discount}>Coupon Added</div>
-                ) : (
-                  <div className={styles.discount} onClick={() => addCoupon(meal)}>
+                  <div className={styles.discount} onClick={() => addCoupon(auth.user.coupons,meal)}>
                     Get {meal.discount} OFF
                   </div>
-                )}
+                
               </div>
               <Link to={`/recipes/${meal.id}`}>
                 <div className={styles.recImageDiv} onClick={() => handleSinglerecipe(meal.id)}>
@@ -181,14 +199,14 @@ const Recipes = () => {
                   <IoMdTime style={{ fontSize: "1.5rem", color: "#676767" }} />
                   <span>{meal.prepare_time}</span>
                 </div>
-                <div className={styles.likeDiv} onClick={() => handleLikes(meal.id,meal.likes)}>
-                  <IoMdHeart style={{ fontSize: "1.5rem", color: "#676767" }} />
+                <div className={styles.likeDiv}>
+                  <IoMdHeart className={styles.likeIcon} onClick={() => handleLikes(meal.id,meal.likes)}/>
                   <span>{meal.likes}</span>
                 </div>
               </div>
             </div>
           ))}
-        </div>
+        </div>}
 
         <div className={styles.pageBtnDiv}>
         <Link to={`/recipes/1`} className={styles.pageBtn}><button disabled={page === 1} onClick={() => setPage(1)}>First</button></Link>
@@ -199,9 +217,10 @@ const Recipes = () => {
           <Link to={`/recipes/${page + 1}`} className={styles.pageBtn}><button disabled={page === total/6} onClick={() => setPage(page + 1)}>Next</button></Link>
           <Link to={`/recipes/${total/6}`} className={styles.pageBtn}><button disabled={page === total/6} onClick={() => setPage(total/6)}>Last</button></Link>
         </div>
-
+      </div>
+      
       <Footer />
-    </div>
+    
     </div>
   );
 }

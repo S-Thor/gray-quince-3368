@@ -1,0 +1,23 @@
+.mainFlexSlides {
+    width: 70%;
+    height: 8rem;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 1rem;
+    border: 1px solid rgb(177, 169, 169);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.imgDiv {
+    width: 13%;
+    height: 100%;
+    /* border: 1px solid red; */
+}
+
+.imgDiv > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}

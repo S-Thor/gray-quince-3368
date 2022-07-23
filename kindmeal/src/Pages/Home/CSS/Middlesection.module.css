@@ -67,6 +67,7 @@
     width: 100%;
     margin: 5rem 0;
     /* border: 1px solid black; */
+    
 }
 
 .joinBtnDiv > button {
@@ -81,6 +82,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: none;
 }
 
 .joinBtnDiv > button > h2 {

@@ -3,20 +3,6 @@ import styles from "../CSS/Footer.module.css";
 import { footerData } from "../../Data/AllData";
 import { Link } from "react-router-dom";
 
-const listItem = [
-  "Home",
-  "Sign Up",
-  "Businesses / Restaurateurs",
-  "Advertising",
-  "About KindMeal.my",
-  "Help & FAQ",
-  "Terms & Conditions",
-  "Inspiring Partners",
-  "Lifestyle Ambassadors",
-  "Jobs & Careers",
-  "Contact Us",
-];
-
 const Footer = () => {
   return (
     <div className={styles.footerMain}>
@@ -36,8 +22,8 @@ const Footer = () => {
         <p>Copyright © KindMeal.my, 2014 - 2022. All rights reserved.</p>
         <p>
           This website promotes compassionate, meat-free dining experience. Some
-          food may contain eggs, dairy products or alcohol, please view individual
-          listings for details.
+          food may contain eggs, dairy products or alcohol, please view
+          individual listings for details.
         </p>
       </div>
     </div>

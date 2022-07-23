@@ -7,7 +7,7 @@
       "chef": "Wolfgang Puck",
       "chef_avatar": "https://www.kindmeal.my/photos/member/0/6-m.jpg",
       "discount": "10%",
-      "likes": 6,
+      "likes": 7,
       "prepare_time": "5 Mins",
       "category": "Beverages"
     },
@@ -73,7 +73,7 @@
       "chef": "Wolfgang Puck",
       "chef_avatar": "https://www.kindmeal.my/photos/member/0/6-m.jpg",
       "discount": "20%",
-      "likes": 85,
+      "likes": 86,
       "prepare_time": "16 Mins",
       "category": "Salads"
     },
@@ -84,7 +84,7 @@
       "chef": "Jamie Oliver",
       "chef_avatar": "https://www.kindmeal.my/photos/member/28/28122-m.jpg",
       "discount": "25%",
-      "likes": 555,
+      "likes": 556,
       "prepare_time": "10 Mins",
       "category": "Salads"
     },
@@ -95,7 +95,7 @@
       "chef": "Gordon Ramsay",
       "chef_avatar": "https://www.kindmeal.my/photos/member/13/13040-m.jpg",
       "discount": "10%",
-      "likes": 455,
+      "likes": 456,
       "prepare_time": "6 Hrs 10 Mins",
       "category": "Salads"
     },
@@ -106,7 +106,7 @@
       "chef": "Sanjeev Kapoor",
       "chef_avatar": "https://www.kindmeal.my/photos/member/40/40177-m.jpg",
       "discount": "15%",
-      "likes": 405,
+      "likes": 410,
       "prepare_time": "40 Mins",
       "category": "Salads"
     },
@@ -117,7 +117,7 @@
       "chef": "Vikas Khanna",
       "chef_avatar": "https://www.kindmeal.my/photos/member/40/40202-m.jpg",
       "discount": "20%",
-      "likes": 205,
+      "likes": 207,
       "prepare_time": "20 Mins",
       "category": "Salads"
     },
@@ -338,23 +338,35 @@
       "email": "sj@gmail.com",
       "password": "123456",
       "username": "Samurai",
-      "coupons": 0
+      "coupons": [
+        {
+          "id": 4,
+          "dish": "Caravella Bellini",
+          "dish_image": "https://www.kindmeal.my/photos/recipe/111/111883-17157-l.jpg",
+          "chef": "Sanjeev Kapoor",
+          "chef_avatar": "https://www.kindmeal.my/photos/member/40/40177-m.jpg",
+          "discount": "25%",
+          "likes": 55,
+          "prepare_time": "20 Mins",
+          "category": "Beverages"
+        }
+      ]
     },
     {
       "isAuth": false,
-      "coupons": 0,
       "email": "sss@gmail.com",
       "password": "000",
       "username": "SJ",
-      "id": 2
+      "id": 2,
+      "coupons": []
     },
     {
       "isAuth": false,
-      "coupons": 0,
       "email": "masai@gmail.com",
       "password": "111",
       "username": "The Gray Man",
-      "id": 3
+      "id": 3,
+      "coupons": []
     }
   ]
 }

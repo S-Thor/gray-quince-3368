@@ -275,4 +275,6 @@ export const footerData = [
         title: "PetFinder.my",
         listItem: ['Adopt A Pet','Smartphone Apps','WAGazine','Discussion Forum','Medical Fund']
     }
-]
+];
+
+export const flexSliderData = [slider11,slider18,slider13,slider14,slider15,slider16,slider17];
