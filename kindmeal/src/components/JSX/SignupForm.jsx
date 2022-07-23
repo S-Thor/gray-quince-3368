@@ -11,6 +11,7 @@ const SignupForm = () => {
   const [username,setUserName] = useState("");
   const [userData,setUserData] = useState({
     isAuth: false,
+    coupons: 0,
     email: "",
     password: "",
     username: ""

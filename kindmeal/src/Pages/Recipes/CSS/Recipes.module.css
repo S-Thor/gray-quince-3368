@@ -92,7 +92,7 @@
 .pageBtnDiv button:not(button:nth-child(3)):hover {
     background-color: #F0F0F0;
 }
-.pageBtnDiv > button:not(button:nth-child(3)) {
+.pageBtn > button {
     margin-left: 1rem;
     padding: 0.3rem 0;
     min-width: 5rem;
@@ -193,7 +193,7 @@
 }
 
 .discount {
-    width: 8rem;
+    width: auto;
     height: 60%;
     background-color: #EF3E3E;
     color: white;
@@ -202,6 +202,9 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    box-sizing: border-box;
+    padding: 0 0.5rem;
+    cursor: pointer;
 }
 
 .recImageDiv {

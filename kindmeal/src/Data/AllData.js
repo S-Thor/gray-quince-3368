@@ -1,5 +1,5 @@
-import salad from "../Images/deal/469-1822-m.jpg";
-import salAte from "../Images/shop/219-940-m.jpg";
+// import salad from "../Images/deal/469-1822-m.jpg";
+// import salAte from "../Images/shop/219-940-m.jpg";
 import moment1 from "../Images/moment/moment1.jpg";
 import moment2 from "../Images/moment/moment2.jpg";
 import moment3 from "../Images/moment/moment3.jpg";
@@ -24,18 +24,104 @@ import middle1 from "../Images/LogoIcon/m1.png";
 import middle2 from "../Images/LogoIcon/m2.png";
 import middle3 from "../Images/LogoIcon/m3.png";
 import middle4 from "../Images/LogoIcon/m4.png";
+import slider11 from "../Images/deal/s1.jpg";
+import slider12 from "../Images/deal/s2.jpg";
+import slider13 from "../Images/deal/s3.jpg";
+import slider14 from "../Images/deal/s4.jpg";
+import slider15 from "../Images/deal/s5.jpg";
+import slider16 from "../Images/deal/s6.jpg";
+import slider17 from "../Images/deal/s7.jpg";
+import slider18 from "../Images/deal/s8.jpg";
+import slider19 from "../Images/deal/s9.jpg";
+import slider21 from "../Images/shop/shop1.jpg"
+import slider22 from "../Images/shop/shop2.jpg"
+import slider23 from "../Images/shop/shop3.jpg"
+import slider24 from "../Images/shop/shop4.jpg"
+import slider25 from "../Images/shop/shop5.jpg"
+import slider26 from "../Images/shop/shop6.jpg"
+import slider27 from "../Images/shop/shop7.jpg"
 
 export const dog = latest1;
 
-export const mainSectionData = [
+export const slider1 = [
     {
-        shopURL: salAte,
-        shopMealURL: salad,
-        discount: '20%',
-        description: "Healthy Personal Salad, RM15.20",
-        shopName: "Salad Atelier"
+        id: 1,
+        src: slider11
+    },
+    {
+        id: 2,
+        src: slider12
+    },
+    {
+        id: 3,
+        src: slider13
+    },
+    {
+        id: 4,
+        src: slider14
+    },
+    {
+        id: 5,
+        src: slider15
+    },
+    {
+        id: 6,
+        src: slider16
+    },
+    {
+        id: 17,
+        src: slider17
+    },
+    {
+        id: 8,
+        src: slider18
+    },
+    {
+        id: 9,
+        src: slider19
+    }
+];
+
+export const slider2 = [
+    {
+        id: 1,
+        src: slider21
+    },
+    {
+        id: 2,
+        src: slider22
+    },
+    {
+        id: 3,
+        src: slider23
+    },
+    {
+        id: 4,
+        src: slider24
+    },
+    {
+        id: 5,
+        src: slider25
+    },
+    {
+        id: 6,
+        src: slider26
+    },
+    {
+        id: 7,
+        src: slider27
     }
 ]
+
+// export const mainSectionData = [
+//     {
+//         shopURL: salAte,
+//         shopMealURL: salad,
+//         discount: '20%',
+//         description: "Healthy Personal Salad, RM15.20",
+//         shopName: "Salad Atelier"
+//     }
+// ]
 
 export const FlexBoxData = [
     {

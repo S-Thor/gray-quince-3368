@@ -6,6 +6,8 @@ import Login from '../Pages/Login';
 import Recipes from '../Pages/Recipes/JSX/Recipes';
 import { AuthContext } from '../Context/AuthContext';
 import PrivateRoute from './PrivateRoute';
+import SingleRecipe from '../Pages/Recipes/JSX/SingleRecipe';
+
 
 
 const AllRoutes = () => {
@@ -17,9 +19,11 @@ const AllRoutes = () => {
         <Route path="/home" element={<Home/>}></Route>
         <Route path="/signup" element={<Signup/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
+        
         <Route path="/recipes" element={<PrivateRoute><Recipes/></PrivateRoute>}></Route>
-        <Route path="/recipes/:recipe" element={<PrivateRoute><Recipes/></PrivateRoute>}></Route>
-        <Route path="/:username" element={<Home/>}></Route>
+        
+        <Route path="/recipes/:page" element={<PrivateRoute><Recipes/></PrivateRoute>}></Route>
+        {/* <Route path="/:username" element={<PrivateRoute><Home/></PrivateRoute>}></Route> */}
     </Routes>
   )
 }

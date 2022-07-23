@@ -1,4 +1,4 @@
-import React,{useState,useContext} from 'react';
+import React,{useState,useContext, useEffect} from 'react';
 import styles from "../CSS/Loginform.module.css";
 import logo from "../../Images/LogoIcon/kmlogo.png";
 import axios from 'axios';
@@ -8,18 +8,25 @@ import { useNavigate } from "react-router-dom";
 const LoginForm = () => {
   const [username,setUserName] = useState('');
   const [password,setPassword] = useState('');
-  const navigate = useNavigate();
   const auth = useContext(AuthContext);
-  console.log("AUTH:",auth);
+  console.log("LoginAuth:",auth);
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("SSS");
     if (username !== "" && password !== "") {
     auth.login({username: username,password: password});
-    {auth.isAuth ? navigate(`/${username}`) : navigate(`/login`)};
     }
   }
+
+  useEffect(() => {
+  if (auth.isAuth) {
+    navigate(`/${auth.user.username}`);
+  } else
+  {
+    navigate(`/login`);
+  }
+},[auth.isAuth])
 
   return (
     <div className={styles.logDiv}>
