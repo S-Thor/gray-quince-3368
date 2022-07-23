@@ -1,10 +1,12 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import axios from "axios";
 
 export const MealContext = createContext();
 
 export const MealProvider = ({ children }) => {
-    const [meal,setMeal] = useState([]);
+    
+
+    
 
     const addMeal = (id) => {
         axios.get(`http://localhost:8080/meals/${id}`)
@@ -19,11 +21,11 @@ export const MealProvider = ({ children }) => {
           })
     }
 
-    const addCoup = (ml) => {
-        setMeal([...meal,ml]);
-    }
+    // const addCoup = (ml) => {
+    //     setMeal([...meal,ml]);
+    // }
     return (
-        <MealContext.Provider value={{ meal,addMeal,addLikes ,addCoup}}>
+        <MealContext.Provider value={{ addMeal,addLikes}}>
           {children}
         </MealContext.Provider>
       );

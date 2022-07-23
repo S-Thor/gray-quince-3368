@@ -7,6 +7,7 @@ import { Link,useSearchParams } from "react-router-dom";
 import { IoMdTime, IoMdHeart } from "react-icons/io";
 import {MealContext} from "../../../Context/MealContext";
 import axios from "axios";
+import { AuthContext } from "../../../Context/AuthContext";
 
 const Recipes = () => {
   
@@ -15,28 +16,35 @@ const Recipes = () => {
   const [searchParams,setSearchParams] = useSearchParams();
   const [mealChef, setMealChef] = useState(searchParams.get("q") || "");
   const [type, setType] = useState("");
-  const [page, setPage] = useState(Number(searchParams.get("page")) || 1);
+  const [page, setPage] = useState(1);
   const meal = useContext(MealContext);
+
+  const auth = useContext(AuthContext);
+  console.log("RECIPES-Auth:",auth);
   console.log("LikeContext:",meal);
   const added = false;
   let [total,setTotal] = useState();
   useEffect(() => {
-    axios
-      .get(`http://localhost:8080/meals?_page=${page}&_limit=6`)
-      .then((res) => {
-        console.log(res);
-        setTotal(Number(res.headers["x-total-count"]));
-        setMeals(res.data);
-      })
-      .catch((err) => console.log(err));
+      getMeals();
   }, [page]);
+
+
+  const getMeals = () => {
+    axios
+    .get(`http://localhost:8080/meals?_page=${page}&_limit=6`)
+    .then((res) => {
+      console.log(res);
+      setTotal(Number(res.headers["x-total-count"]));
+      setMeals(res.data);
+    })
+    .catch((err) => console.log(err));
+  }
 
   useEffect(() => {
     setSearchParams({
-        page,
         q: mealChef
     });
-},[setSearchParams,page,mealChef])
+},[setSearchParams,mealChef])
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -90,12 +98,18 @@ const Recipes = () => {
       meal.addMeal(id);
   }
 
-  function addCoupon(ml) {
-    meal.addCoup(ml);
+  function addCoupon(coup,ml) {
+    auth.addCoup(coup,ml);
   }
 
-  function handleLikes(id,num) {
-    meal.addLikes(id,num);
+  function handleLikes(id,likes) {
+    console.log("I Like This");
+    axios.patch(`http://localhost:8080/meals/${id}`,{likes: likes + 1})
+          .then((res) => {
+            console.log("LIKE-RES:",res);
+            getMeals();
+          })
+          .catch((err) => console.log(err))
   }
 
   return (
@@ -165,7 +179,7 @@ const Recipes = () => {
                 {added ? (
                   <div className={styles.discount}>Coupon Added</div>
                 ) : (
-                  <div className={styles.discount} onClick={() => addCoupon(meal)}>
+                  <div className={styles.discount} onClick={() => addCoupon(auth.user.coupons,meal)}>
                     Get {meal.discount} OFF
                   </div>
                 )}
@@ -181,8 +195,8 @@ const Recipes = () => {
                   <IoMdTime style={{ fontSize: "1.5rem", color: "#676767" }} />
                   <span>{meal.prepare_time}</span>
                 </div>
-                <div className={styles.likeDiv} onClick={() => handleLikes(meal.id,meal.likes)}>
-                  <IoMdHeart style={{ fontSize: "1.5rem", color: "#676767" }} />
+                <div className={styles.likeDiv}>
+                  <IoMdHeart className={styles.likeIcon} onClick={() => handleLikes(meal.id,meal.likes)}/>
                   <span>{meal.likes}</span>
                 </div>
               </div>
@@ -199,9 +213,10 @@ const Recipes = () => {
           <Link to={`/recipes/${page + 1}`} className={styles.pageBtn}><button disabled={page === total/6} onClick={() => setPage(page + 1)}>Next</button></Link>
           <Link to={`/recipes/${total/6}`} className={styles.pageBtn}><button disabled={page === total/6} onClick={() => setPage(total/6)}>Last</button></Link>
         </div>
-
+      </div>
+      
       <Footer />
-    </div>
+    
     </div>
   );
 }

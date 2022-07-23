@@ -27,9 +27,9 @@ function handleLogout(id) {
   auth.logout(id);
 }
 
-require('react-dom');
-window.React2 = require('react');
-console.log("CHECK:",window.React1 === window.React2);
+// require('react-dom');
+// window.React2 = require('react');
+// console.log("CHECK:",window.React1 === window.React2);
 
 
   if (!auth.isAuth) {
@@ -89,7 +89,7 @@ console.log("CHECK:",window.React1 === window.React2);
       <Link to="/coupons">
         <div className={styles.cartDiv}>
           <img src={cart} alt="" />
-          <span>{auth.user.coupons}</span>
+          <span>{auth.user.coupons.length}</span>
         </div>
       </Link>
       <h3>{auth.user.username}</h3>
