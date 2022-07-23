@@ -1,24 +1,25 @@
-import React,{useState,useEffect} from "react";
+import React,{useState,useEffect,useContext} from "react";
 import styles from "../CSS/SingleRecipe.module.css";
 import Heading from "../../../components/JSX/Heading";
 import Navbar from "../../../components/JSX/Navbar";
 import Footer from "../../../components/JSX/Footer";
 import { Link, useParams } from "react-router-dom";
 import { IoMdTime, IoMdHeart } from "react-icons/io";
+import {MealContext} from "../../../Context/MealContext";
 import axios from "axios";
 
 
-// const meal = {
-//   "id": 1,
-//   "dish": "Banana Bread Latte",
-//   "dish_image": "https://www.kindmeal.my/photos/recipe/103/103170-15237-l.jpg",
-//   "chef": "Wolfgang Puck",
-//   "chef_avatar": "https://www.kindmeal.my/photos/member/0/6-m.jpg",
-//   "discount": "10%",
-//   "likes": 5,
-//   "prepare_time": "5 Mins",
-//   "category": "Beverages"
-// };
+const meal = {
+  "id": 1,
+  "dish": "Banana Bread Latte",
+  "dish_image": "https://www.kindmeal.my/photos/recipe/103/103170-15237-l.jpg",
+  "chef": "Wolfgang Puck",
+  "chef_avatar": "https://www.kindmeal.my/photos/member/0/6-m.jpg",
+  "discount": "10%",
+  "likes": 5,
+  "prepare_time": "5 Mins",
+  "category": "Beverages"
+};
 
 const added = false;
 
@@ -27,14 +28,9 @@ const added = false;
 
 const SingleRecipe = () => {
 
-  const params = useParams();
-  const [meal,setMeal] = useState();
-  console.log("PARAMS:",params);
+  const mealCo = useContext(MealContext);
+  console.log("SINGLEMEAL:",mealCo);
 
-  // useEffect(() => {
-      axios.get(`http://localhost:8080/meals/${params.recipe}`)
-        .then((res) => {console.log("SINGLE:",res);});
-  // },[])
   return (
     <div className={styles.singleDiv}>
       <Heading />

@@ -204,6 +204,7 @@
     text-decoration: none;
     box-sizing: border-box;
     padding: 0 0.5rem;
+    cursor: pointer;
 }
 
 .recImageDiv {

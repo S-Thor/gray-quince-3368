@@ -11,17 +11,26 @@ import { useNavigate } from "react-router-dom";
 
 const Heading = () => {
   const auth = useContext(AuthContext);
-  const navigate = useNavigate();
-  console.log("Head", auth);
+  console.log("headingAuth:",auth);
+  
 
-  const handleLogout = () => {
-    auth.logout(auth.user.id);
-    navigate("/");
-  };
+//     useEffect(() => {
+//   if (auth.isAuth) {
+//     navigate(`/${auth.user.username}`);
+//   } else
+//   {
+//     navigate(`/`);
+//   }
+// },[auth.isAuth])
 
-  // useEffect(() => {
-  //   handleLogout();
-  // }, []);
+function handleLogout(id) {
+  auth.logout(id);
+}
+
+require('react-dom');
+window.React2 = require('react');
+console.log("CHECK:",window.React1 === window.React2);
+
 
   if (!auth.isAuth) {
     return (
@@ -84,7 +93,7 @@ const Heading = () => {
         </div>
       </Link>
       <h3>{auth.user.username}</h3>
-      <button onClick={handleLogout}>Logout</button>
+      <button onClick={() => handleLogout(auth.user.id)}>Logout</button>
     </div>
   </div>
 );

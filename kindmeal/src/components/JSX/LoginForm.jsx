@@ -8,22 +8,20 @@ import { useNavigate } from "react-router-dom";
 const LoginForm = () => {
   const [username,setUserName] = useState('');
   const [password,setPassword] = useState('');
-  const navigate = useNavigate();
   const auth = useContext(AuthContext);
-  console.log("LOGAUTH:",auth);
+  console.log("LoginAuth:",auth);
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("isAuth",auth.isAuth);
     if (username !== "" && password !== "") {
     auth.login({username: username,password: password});
-    console.log("isAuth",auth.isAuth);
-    
     }
   }
+
   useEffect(() => {
   if (auth.isAuth) {
-    navigate(`/${username}`);
+    navigate(`/${auth.user.username}`);
   } else
   {
     navigate(`/login`);

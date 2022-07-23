@@ -7,7 +7,7 @@
       "chef": "Wolfgang Puck",
       "chef_avatar": "https://www.kindmeal.my/photos/member/0/6-m.jpg",
       "discount": "10%",
-      "likes": 5,
+      "likes": 6,
       "prepare_time": "5 Mins",
       "category": "Beverages"
     },
@@ -337,23 +337,23 @@
       "isAuth": true,
       "email": "sj@gmail.com",
       "password": "123456",
-      "username": "The Gray Man",
-      "coupons": 3
+      "username": "Samurai",
+      "coupons": 0
     },
     {
       "isAuth": false,
-      "coupons": 6,
+      "coupons": 0,
       "email": "sss@gmail.com",
-      "password": "1545612",
+      "password": "000",
       "username": "SJ",
       "id": 2
     },
     {
-      "isAuth": true,
-      "coupons": 4,
-      "email": "fde@gmail.com",
+      "isAuth": false,
+      "coupons": 0,
+      "email": "masai@gmail.com",
       "password": "111",
-      "username": "Samurai",
+      "username": "The Gray Man",
       "id": 3
     }
   ]

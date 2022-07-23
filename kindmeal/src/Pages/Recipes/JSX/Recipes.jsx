@@ -3,19 +3,21 @@ import Footer from "../../../components/JSX/Footer";
 import Heading from "../../../components/JSX/Heading";
 import Navbar from "../../../components/JSX/Navbar";
 import styles from "../CSS/Recipes.module.css";
-import { Link } from "react-router-dom";
+import { Link,useSearchParams } from "react-router-dom";
 import { IoMdTime, IoMdHeart } from "react-icons/io";
-import {AuthContext} from "../../../Context/AuthContext";
+import {MealContext} from "../../../Context/MealContext";
 import axios from "axios";
 
 const Recipes = () => {
   
   const [meals, setMeals] = useState([]);
-  const [mealChef, setMealChef] = useState("");
+  
+  const [searchParams,setSearchParams] = useSearchParams();
+  const [mealChef, setMealChef] = useState(searchParams.get("q") || "");
   const [type, setType] = useState("");
-  const [page, setPage] = useState(1);
-  const like = useContext(AuthContext);
-  console.log("LikeContext:",like);
+  const [page, setPage] = useState(Number(searchParams.get("page")) || 1);
+  const meal = useContext(MealContext);
+  console.log("LikeContext:",meal);
   const added = false;
   let [total,setTotal] = useState();
   useEffect(() => {
@@ -29,8 +31,16 @@ const Recipes = () => {
       .catch((err) => console.log(err));
   }, [page]);
 
+  useEffect(() => {
+    setSearchParams({
+        page,
+        q: mealChef
+    });
+},[setSearchParams,page,mealChef])
+
   function handleSubmit(e) {
     e.preventDefault();
+    setPage(() => 1);
     console.log(mealChef, type);
     if (type === "all") {
       axios
@@ -76,9 +86,18 @@ const Recipes = () => {
   }
 
 
-  function handleLikes(id) {
-      like.addLikes(id);
+  function handleSinglerecipe(id) {
+      meal.addMeal(id);
   }
+
+  function addCoupon(ml) {
+    meal.addCoup(ml);
+  }
+
+  function handleLikes(id,num) {
+    meal.addLikes(id,num);
+  }
+
   return (
     <div>
       <Heading />
@@ -146,13 +165,13 @@ const Recipes = () => {
                 {added ? (
                   <div className={styles.discount}>Coupon Added</div>
                 ) : (
-                  <Link to="/" className={styles.discount}>
-                    {meal.discount} OFF
-                  </Link>
+                  <div className={styles.discount} onClick={() => addCoupon(meal)}>
+                    Get {meal.discount} OFF
+                  </div>
                 )}
               </div>
               <Link to={`/recipes/${meal.id}`}>
-                <div className={styles.recImageDiv}>
+                <div className={styles.recImageDiv} onClick={() => handleSinglerecipe(meal.id)}>
                   <img src={meal.dish_image} alt="" />
                   <h3 className={styles.recTitle}>{meal.dish}</h3>
                 </div>
@@ -162,7 +181,7 @@ const Recipes = () => {
                   <IoMdTime style={{ fontSize: "1.5rem", color: "#676767" }} />
                   <span>{meal.prepare_time}</span>
                 </div>
-                <div className={styles.likeDiv} onClick={() => handleLikes(meal.id)}>
+                <div className={styles.likeDiv} onClick={() => handleLikes(meal.id,meal.likes)}>
                   <IoMdHeart style={{ fontSize: "1.5rem", color: "#676767" }} />
                   <span>{meal.likes}</span>
                 </div>
