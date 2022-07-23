@@ -20,12 +20,13 @@ const SignupForm = () => {
   function handleSubmit(e){
     e.preventDefault();
     console.log(email,password,username);
-    if (email !== "" && password !== "" && username != ""){
-    axios.post(`http://localhost:8080/users`,{
+    if (email !== "" && password !== "" && username !== ""){
+    axios.post(`https://json-server-project-masai.herokuapp.com/users`,{
       isAuth: false,
       email: email,
       password: password,
-      username: username
+      username: username,
+      coupons: []
     })
     .then((res) => {
       console.log(res);

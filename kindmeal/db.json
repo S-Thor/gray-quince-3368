@@ -334,32 +334,21 @@
   "users": [
     {
       "id": 1,
-      "isAuth": false,
+      "isAuth": true,
       "email": "sj@gmail.com",
       "password": "123456",
       "username": "Samurai",
       "coupons": [
         {
-          "id": 5,
-          "dish": "Café A La Russe (Chocolate Coffee)",
-          "dish_image": "https://www.kindmeal.my/photos/recipe/104/104650-15556-l.jpg",
-          "chef": "Vikas Khanna",
-          "chef_avatar": "https://www.kindmeal.my/photos/member/40/40202-m.jpg",
-          "discount": "10%",
-          "likes": 50,
+          "id": 4,
+          "dish": "Caravella Bellini",
+          "dish_image": "https://www.kindmeal.my/photos/recipe/111/111883-17157-l.jpg",
+          "chef": "Sanjeev Kapoor",
+          "chef_avatar": "https://www.kindmeal.my/photos/member/40/40177-m.jpg",
+          "discount": "25%",
+          "likes": 55,
           "prepare_time": "20 Mins",
           "category": "Beverages"
-        },
-        {
-          "id": 11,
-          "dish": "Ceasar Dressing",
-          "dish_image": "https://www.kindmeal.my/photos/recipe/1000/1000012-19420-l.jpg",
-          "chef": "Vikas Khanna",
-          "chef_avatar": "https://www.kindmeal.my/photos/member/40/40202-m.jpg",
-          "discount": "20%",
-          "likes": 207,
-          "prepare_time": "20 Mins",
-          "category": "Salads"
         }
       ]
     },
@@ -372,46 +361,12 @@
       "coupons": []
     },
     {
-      "isAuth": true,
+      "isAuth": false,
       "email": "masai@gmail.com",
       "password": "111",
       "username": "The Gray Man",
       "id": 3,
-      "coupons": [
-        {
-          "id": 9,
-          "dish": "Marinated Three Bean Salad",
-          "dish_image": "https://www.kindmeal.my/photos/recipe/106/106406-16026-l.jpg",
-          "chef": "Gordon Ramsay",
-          "chef_avatar": "https://www.kindmeal.my/photos/member/13/13040-m.jpg",
-          "discount": "10%",
-          "likes": 456,
-          "prepare_time": "6 Hrs 10 Mins",
-          "category": "Salads"
-        },
-        {
-          "id": 14,
-          "dish": "Maple French Toast Muffins",
-          "dish_image": "https://www.kindmeal.my/photos/recipe/86/86878-11091-l.jpg",
-          "chef": "Jamie Oliver",
-          "chef_avatar": "https://www.kindmeal.my/photos/member/28/28122-m.jpg",
-          "discount": "15%",
-          "likes": 509,
-          "prepare_time": "50 Mins",
-          "category": "Breakfast"
-        },
-        {
-          "id": 13,
-          "dish": "Double-Chocolate Muffins",
-          "dish_image": "https://www.kindmeal.my/photos/recipe/113/113228-17446-l.jpg",
-          "chef": "Wolfgang Puck",
-          "chef_avatar": "https://www.kindmeal.my/photos/member/0/6-m.jpg",
-          "discount": "10%",
-          "likes": 135,
-          "prepare_time": "35 Mins",
-          "category": "Breakfast"
-        }
-      ]
+      "coupons": []
     }
   ]
 }

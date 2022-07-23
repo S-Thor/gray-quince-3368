@@ -3,19 +3,6 @@ import styles from "../CSS/Footer.module.css";
 import { footerData } from "../../Data/AllData";
 import { Link } from "react-router-dom";
 
-const listItem = [
-  "Home",
-  "Sign Up",
-  "Businesses / Restaurateurs",
-  "Advertising",
-  "About KindMeal.my",
-  "Help & FAQ",
-  "Terms & Conditions",
-  "Inspiring Partners",
-  "Lifestyle Ambassadors",
-  "Jobs & Careers",
-  "Contact Us",
-];
 
 const Footer = () => {
   return (

@@ -15,14 +15,13 @@ const Recipes = () => {
   
   const [searchParams,setSearchParams] = useSearchParams();
   const [mealChef, setMealChef] = useState(searchParams.get("q") || "");
-  const [type, setType] = useState("");
+  const [type, setType] = useState("all");
   const [page, setPage] = useState(1);
   const meal = useContext(MealContext);
 
   const auth = useContext(AuthContext);
   console.log("RECIPES-Auth:",auth);
   console.log("LikeContext:",meal);
-  const added = false;
   let [total,setTotal] = useState();
   useEffect(() => {
       getMeals();
@@ -31,7 +30,7 @@ const Recipes = () => {
 
   const getMeals = () => {
     axios
-    .get(`http://localhost:8080/meals?_page=${page}&_limit=6`)
+    .get(`https://json-server-project-masai.herokuapp.com/meals?_page=${page}&_limit=6`)
     .then((res) => {
       console.log(res);
       setTotal(Number(res.headers["x-total-count"]));
@@ -52,7 +51,7 @@ const Recipes = () => {
     console.log(mealChef, type);
     if (type === "all") {
       axios
-        .get(`http://localhost:8080/meals?q=${mealChef}&_limit=6`, {
+        .get(`https://json-server-project-masai.herokuapp.com/meals?q=${mealChef}&_limit=6`, {
           params: {
             category: [
               "Beverages",
@@ -75,7 +74,7 @@ const Recipes = () => {
         .catch((err) => console.log(err));
     } else {
       axios
-        .get(`http://localhost:8080/meals?q=${mealChef}`, {
+        .get(`https://json-server-project-masai.herokuapp.com/meals?q=${mealChef}`, {
           params: {
             category: [type],
           },
@@ -104,7 +103,7 @@ const Recipes = () => {
 
   function handleLikes(id,likes) {
     console.log("I Like This");
-    axios.patch(`http://localhost:8080/meals/${id}`,{likes: likes + 1})
+    axios.patch(`https://json-server-project-masai.herokuapp.com/meals/${id}`,{likes: likes + 1})
           .then((res) => {
             console.log("LIKE-RES:",res);
             getMeals();
@@ -176,13 +175,10 @@ const Recipes = () => {
                 <Link to="/" className={styles.chefLink}>
                   {meal.chef}
                 </Link>
-                {added ? (
-                  <div className={styles.discount}>Coupon Added</div>
-                ) : (
                   <div className={styles.discount} onClick={() => addCoupon(auth.user.coupons,meal)}>
                     Get {meal.discount} OFF
                   </div>
-                )}
+                
               </div>
               <Link to={`/recipes/${meal.id}`}>
                 <div className={styles.recImageDiv} onClick={() => handleSinglerecipe(meal.id)}>

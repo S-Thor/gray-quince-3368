@@ -12,18 +12,29 @@ export const AuthProvider = ({ children }) => {
 
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/users`,{
+    axios.get(`https://json-server-project-masai.herokuapp.com/users`,{
       params: {
         isAuth: true
       }
     })
-    .then ((res) => {console.log("RRR:",res);setUser(() => res.data[0]);setIsAuth(() => true);setCoupons(() => res.data[0].coupons);})
+    .then ((res) => {
+      console.log("RRR:",res);
+      if (res.data[0] === undefined)
+      {
+        setIsAuth(() => false);
+      } else {
+      setUser(() => res.data[0]);
+      setIsAuth(() => true);
+      setCoupons(() => res.data[0].coupons);
+      }
+    })
+    
   },[])
   let id;
 
   const login = (data) => {
     axios
-      .get(`http://localhost:8080/users`, {
+      .get(`https://json-server-project-masai.herokuapp.com/users`, {
         params: data,
       })
       .then((res) => {
@@ -35,7 +46,7 @@ export const AuthProvider = ({ children }) => {
           id = res.data[0].id;
 
           axios
-            .patch(`http://localhost:8080/users/${id}`, { isAuth: true })
+            .patch(`https://json-server-project-masai.herokuapp.com/users/${id}`, { isAuth: true })
             .then((res) => {
               console.log("AFTERLOG:", res);
               setIsAuth(() => res.data.isAuth);
@@ -49,7 +60,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = (id) => {
     axios
-      .patch(`http://localhost:8080/users/${id}`, { isAuth: false })
+      .patch(`https://json-server-project-masai.herokuapp.com/users/${id}`, { isAuth: false })
       .then((res) => {
         console.log("out:", res.data);
         setIsAuth(() => res.data.isAuth);
@@ -62,7 +73,7 @@ export const AuthProvider = ({ children }) => {
 
   const addCoup = (coup,dish) => {
     console.log("COUPON:",coup);
-    axios.patch(`http://localhost:8080/users/${user.id}`,{coupons: [...coup,dish]})
+    axios.patch(`https://json-server-project-masai.herokuapp.com/users/${user.id}`,{coupons: [...coup,dish]})
       .then((res) => {console.log("ADDCOUP-RES:",res);setUser(() => res.data);setCoupons(() => res.data.coupons);alert("Coupon Added. Check it in your Coupons")})
   }
 
@@ -75,15 +86,10 @@ export const AuthProvider = ({ children }) => {
     let newCoup = coupons.filter((coup) => id !== coup.id);
     setCoupons(() => newCoup);
     alert('Your Coupons is Redeemed.');
-    axios.patch(`http://localhost:8080/users/${user.id}`,{coupons: newCoup})
+    axios.patch(`https://json-server-project-masai.herokuapp.com/users/${user.id}`,{coupons: newCoup})
       .then((res) => {console.log("REDEEM-RES:",res);setUser(() => res.data);})
     console.log("C2:",coupons);
   }
-
-  // useEffect(() => {
-  //   axios.patch(`http://localhost:8080/users/${user.id}`,{coupons: coupons})
-  //     .then((res) => console.log("REDEEM-RES:",res))
-  // },[coupons]);
 
   return (
     <AuthContext.Provider value={{ isAuth, user,login,logout,addCoup,coupons,redeem }}>

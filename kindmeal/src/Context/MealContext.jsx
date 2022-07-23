@@ -9,13 +9,13 @@ export const MealProvider = ({ children }) => {
     
 
     const addMeal = (id) => {
-        axios.get(`http://localhost:8080/meals/${id}`)
+        axios.get(`https://json-server-project-masai.herokuapp.com/meals/${id}`)
             .then((res) => console.log("ADDMEAL:",res))
             .catch((err) => console.log(err));
     }
 
     const addLikes = (id,num) => {
-        axios.patch(`http://localhost:8080/meals/${id}`,{likes: num + 1})
+        axios.patch(`https://json-server-project-masai.herokuapp.com/meals/${id}`,{likes: num + 1})
           .then((res) => {
             console.log("LIKES:",res);
           })

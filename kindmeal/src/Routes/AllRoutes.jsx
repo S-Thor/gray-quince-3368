@@ -6,7 +6,6 @@ import Login from '../Pages/Login';
 import Recipes from '../Pages/Recipes/JSX/Recipes';
 import { AuthContext } from '../Context/AuthContext';
 import PrivateRoute from './PrivateRoute';
-import SingleRecipe from '../Pages/Recipes/JSX/SingleRecipe';
 import Coupons from '../Pages/Coupons';
 import Deals from '../Pages/Deals';
 import Moments from '../Pages/Moments';

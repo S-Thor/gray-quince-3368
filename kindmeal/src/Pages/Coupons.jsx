@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext,useEffect } from 'react'
 import Heading from '../components/JSX/Heading'
 import Navbar from '../components/JSX/Navbar'
 import { AuthContext } from '../Context/AuthContext';
@@ -13,7 +13,7 @@ const Coupons = () => {
     const added = false;
     const meals = coup.user.coupons;
     const total = coup.user.coupons.length;
-
+    
     
 
 
@@ -21,6 +21,7 @@ const Coupons = () => {
         coup.redeem(id);
     }
 
+    
     
   return (
     <div>
@@ -37,7 +38,7 @@ const Coupons = () => {
         
 
         <div className={styles.recipesDiv}>
-          {meals.map((meal) => (
+          {meals.map((meal,index) => (
             <div key={meal.id} className={styles.singleCard}>
               <div className={styles.chefDisDiv}>
                 <div className={styles.chefAvatarDiv}>
