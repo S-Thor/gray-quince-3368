@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "../CSS/Navbar.module.css";
 
@@ -38,8 +38,7 @@ const links = [
 ];
 
 const Navbar = () => {
-    // console.log(({isActive}));
-    
+    // console.log(({isActive}));    
   return (
     <div className={styles.navDiv}>
         <div className={styles.linksDiv}>

@@ -17,6 +17,8 @@
     /* border: 1px solid black; */
 }
 
+
+
 .activeNav {
     min-width: 12%;
     display: inline-flex;
@@ -46,5 +48,9 @@
     min-height: 2.3rem;
     text-align: center;
     /* padding: 0 1rem; */
+}
+
+.baseNav:hover {
+    background-color: #229760;
 }
 
