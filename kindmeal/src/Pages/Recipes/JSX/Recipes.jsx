@@ -14,8 +14,8 @@ const Recipes = () => {
   const [meals, setMeals] = useState([]);
   const [loading,setLoading] = useState(false);
   const [error,setError] = useState(false);
-  const [searchParams,setSearchParams] = useSearchParams();
-  const [mealChef, setMealChef] = useState(searchParams.get("q") || "");
+  // const [searchParams,setSearchParams] = useSearchParams();
+  const [mealChef, setMealChef] = useState("");
   const [type, setType] = useState("all");
   const [page, setPage] = useState(1);
   const meal = useContext(MealContext);
@@ -44,11 +44,11 @@ const Recipes = () => {
     .catch((err) => {console.log(err);setError(() => err);});
   }
 
-  useEffect(() => {
-    setSearchParams({
-        q: mealChef
-    });
-},[setSearchParams,mealChef])
+//   useEffect(() => {
+//     setSearchParams({
+//         q: mealChef
+//     });
+// },[setSearchParams,mealChef])
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -163,13 +163,13 @@ const Recipes = () => {
 
       <div className={styles.mainRecipes}>
         <div className={styles.pageBtnDiv}>
-        <Link to={`/recipes/page1`} className={styles.pageBtn}><button disabled={page === 1} onClick={() => setPage(1)}>First</button></Link>
-        <Link to={`/recipes/page${page - 1}`} className={styles.pageBtn}><button disabled={page === 1} onClick={() => setPage(page - 1)}>
+        <Link to={`/recipes`} className={styles.pageBtn}><button disabled={page === 1} onClick={() => setPage(1)}>First</button></Link>
+        <Link to={`/recipes`} className={styles.pageBtn}><button disabled={page === 1} onClick={() => setPage(page - 1)}>
             Previous
           </button></Link>
           <button>{page}</button>
-          <Link to={`/recipes/page${page + 1}`} className={styles.pageBtn}><button disabled={page === total/6} onClick={() => setPage(page + 1)}>Next</button></Link>
-          <Link to={`/recipes/page${total/6}`} className={styles.pageBtn}><button disabled={page === total/6} onClick={() => setPage(total/6)}>Last</button></Link>
+          <Link to={`/recipes`} className={styles.pageBtn}><button disabled={page === total/6} onClick={() => setPage(page + 1)}>Next</button></Link>
+          <Link to={`/recipes`} className={styles.pageBtn}><button disabled={page === total/6} onClick={() => setPage(total/6)}>Last</button></Link>
         </div>
         
         {loading ? <h1>Loading....</h1> : 
